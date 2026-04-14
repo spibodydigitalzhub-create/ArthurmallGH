@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop | ArthurmallGh</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="menu-icon" id="menuBtn">&#9776;</button>
+
+  <a href="index.html" class="logo">
+    <img src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo" />
+    <span>ArthurmallGh</span>
+  </a>
+
+  <a href="cart.html" class="cart-icon">
+    🛒
+    <small id="cartCount">0</small>
+  </a>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">Cart</a>
+  <a href="checkout.html">Checkout</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero small-hero">
+  <div class="hero-overlay">
+    <p class="hero-mini">OUR COLLECTION</p>
+    <h1>Shop Products</h1>
+    <p class="hero-text">Quality bags, smart watches, electronic devices and more.</p>
+  </div>
+</section>
+
+<section class="info-bar">
+  <div class="info-item">🚚 Free Delivery in Accra</div>
+  <div class="info-item">💰 Payment on Delivery</div>
+  <div class="info-item">📲 Easy WhatsApp Orders</div>
+</section>
+
+<section class="section">
+  <div class="section-title">
+    <span></span>
+    <h2>SHOP PRODUCTS</h2>
+    <span></span>
+  </div>
+
+  <input type="text" id="searchInput" class="search-box" placeholder="Search products..." />
+
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="bag">Bags</button>
+    <button class="filter-btn" data-filter="watch">Watches</button>
+    <button class="filter-btn" data-filter="electronics">Electronics</button>
+  </div>
+
+  <div class="product-grid" id="products">
+
+    <div class="product-card"
+      data-category="bag"
+      data-name="Leather Bag"
+      data-price="265"
+      data-image="https://i.imgur.com/dtGfF0U.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. High quality and durable material.">
+      <span class="badge">-20%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/dtGfF0U.jpeg" alt="Leather Bag">
+      </div>
+      <h3>Leather Bag</h3>
+      <p class="price">₵265 <span>₵300</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="bag"
+      data-name="Travel Bag"
+      data-price="265"
+      data-image="https://i.imgur.com/3l9GV07.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Premium travel bag for daily use.">
+      <span class="badge">-15%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/3l9GV07.jpeg" alt="Travel Bag">
+      </div>
+      <h3>Travel Bag</h3>
+      <p class="price">₵265 <span>₵300</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="bag"
+      data-name="Office Bag"
+      data-price="265"
+      data-image="https://i.imgur.com/XM1f3gl.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Perfect for office and formal use.">
+      <span class="badge">-10%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/XM1f3gl.jpeg" alt="Office Bag">
+      </div>
+      <h3>Office Bag</h3>
+      <p class="price">₵265 <span>₵300</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="bag"
+      data-name="Mini Fashion Bag"
+      data-price="265"
+      data-image="https://i.imgur.com/m1iCVCW.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Stylish and compact everyday bag.">
+      <span class="badge">-18%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/m1iCVCW.jpeg" alt="Mini Fashion Bag">
+      </div>
+      <h3>Mini Fashion Bag</h3>
+      <p class="price">₵265 <span>₵300</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="bag"
+      data-name="Hand Bag"
+      data-price="235"
+      data-image="https://i.imgur.com/MPiNhJa.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Elegant hand bag with durable finish.">
+      <span class="badge">-12%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/MPiNhJa.jpeg" alt="Hand Bag">
+      </div>
+      <h3>Hand Bag</h3>
+      <p class="price">₵235 <span>₵290</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="bag"
+      data-name="Luxury Bag"
+      data-price="235"
+      data-image="https://i.imgur.com/GFFZsml.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Premium luxury bag with classy look.">
+      <span class="badge">-14%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/GFFZsml.jpeg" alt="Luxury Bag">
+      </div>
+      <h3>Luxury Bag</h3>
+      <p class="price">₵235 <span>₵290</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="bag"
+      data-name="Classic Bag"
+      data-price="235"
+      data-image="https://i.imgur.com/QARHYGx.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Classic bag suitable for different occasions.">
+      <span class="badge">-17%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/QARHYGx.jpeg" alt="Classic Bag">
+      </div>
+      <h3>Classic Bag</h3>
+      <p class="price">₵235 <span>₵290</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="watch"
+      data-name="Smart Watch"
+      data-price="285"
+      data-image="https://i.imgur.com/LtDvf8q.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Package includes 2 smart watches, 2 quality AirPods, 7 colorful straps, 1 silver chain strap, and 2 chargers.">
+      <span class="badge">-12%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/LtDvf8q.jpeg" alt="Smart Watch">
+      </div>
+      <h3>Smart Watch</h3>
+      <p class="price">₵285 <span>₵300</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="watch"
+      data-name="Smart Watch Pro"
+      data-price="285"
+      data-image="https://i.imgur.com/FGE98k0.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Package includes 2 smart watches, 2 quality AirPods, 7 colorful straps, 1 silver chain strap, and 2 chargers.">
+      <span class="badge">-16%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/FGE98k0.jpeg" alt="Smart Watch Pro">
+      </div>
+      <h3>Smart Watch Pro</h3>
+      <p class="price">₵285 <span>₵300</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="watch"
+      data-name="Premium Watch"
+      data-price="285"
+      data-image="https://i.imgur.com/5xFRy58.jpeg"
+      data-details="Free delivery in Accra. Payment on delivery. Package includes 2 smart watches, 2 quality AirPods, 7 colorful straps, 1 silver chain strap, and 2 chargers.">
+      <span class="badge">-22%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/5xFRy58.jpeg" alt="Premium Watch">
+      </div>
+      <h3>Premium Watch</h3>
+      <p class="price">₵285 <span>₵300</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card"
+      data-category="electronics"
+      data-name="Quality AirPods"
+      data-price="180"
+      data-image="https://i.imgur.com/LtDvf8q.jpeg"
+      data-details="Electronic device category. Free delivery in Accra. Payment on delivery.">
+      <span class="badge">-10%</span>
+      <div class="product-image-wrap">
+        <img src="https://i.imgur.com/LtDvf8q.jpeg" alt="Quality AirPods">
+      </div>
+      <h3>Quality AirPods</h3>
+      <p class="price">₵180 <span>₵220</span></p>
+      <div class="product-actions">
+        <button class="view-btn">View Details</button>
+        <button class="add-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="product-modal" id="productModal">
+  <div class="product-modal-content">
+    <button class="close-modal" id="closeModal">&times;</button>
+
+    <div class="modal-image-wrap">
+      <img id="modalImage" src="" alt="">
+    </div>
+
+    <h2 id="modalName"></h2>
+    <p class="modal-price" id="modalPrice"></p>
+    <p class="modal-details" id="modalDetails"></p>
+
+    <div class="modal-actions">
+      <button class="btn" id="modalAdd">Add to Cart</button>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-brand">
+    <img src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo" />
+    <h3>ArthurmallGh</h3>
+  </div>
+
+  <p>Quality bags, smart watches, electronic devices and more.</p>
+  <p>Phone: +233 57 084 8484</p>
+  <p>Email: ericarthur2020@yahoo.com</p>
+  <p>Location: Accra, Ghana</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

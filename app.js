@@ -12,6 +12,7 @@ const modalImage = document.getElementById("modalImage");
 const modalName = document.getElementById("modalName");
 const modalPrice = document.getElementById("modalPrice");
 const modalDetails = document.getElementById("modalDetails");
+const modalOrderBtn = document.getElementById("modalOrderBtn");
 
 const checkoutItems = document.getElementById("checkoutItems");
 const checkoutTotalItems = document.getElementById("checkoutTotalItems");
@@ -22,6 +23,8 @@ const contactForm = document.getElementById("contactForm");
 
 const whatsappNumber = "233570848484";
 const contactWhatsappNumber = "233570848484";
+
+let currentProduct = null;
 
 /* MENU */
 if (menuBtn && mobileMenu) {
@@ -42,6 +45,16 @@ function updateCartCountFromCheckoutProduct() {
   }
 }
 
+function saveSelectedProduct(product) {
+  localStorage.setItem("arthurmallghCheckoutProduct", JSON.stringify(product));
+  updateCartCountFromCheckoutProduct();
+}
+
+function goToCheckout(product) {
+  saveSelectedProduct(product);
+  window.location.href = "checkout.html";
+}
+
 /* FILTER */
 function applyFilterAndSearch(selectedFilter = null) {
   if (!productCards.length) return;
@@ -55,7 +68,9 @@ function applyFilterAndSearch(selectedFilter = null) {
 
   productCards.forEach((card) => {
     const category = card.dataset.category;
-    const name = card.querySelector("h3").textContent.toLowerCase();
+    const name = card.dataset.name
+      ? card.dataset.name.toLowerCase()
+      : card.querySelector("h3").textContent.toLowerCase();
 
     const matchesFilter = activeFilter === "all" || activeFilter === category;
     const matchesSearch = name.includes(searchValue);
@@ -80,20 +95,7 @@ if (searchInput) {
   });
 }
 
-function applyCategoryFromUrl() {
-  const params = new URLSearchParams(window.location.search);
-  const category = params.get("category");
-  if (!category) return;
-
-  const matchingButton = document.querySelector(`.filter-btn[data-filter="${category}"]`);
-  if (matchingButton) {
-    filterButtons.forEach((btn) => btn.classList.remove("active"));
-    matchingButton.classList.add("active");
-    applyFilterAndSearch(category);
-  }
-}
-
-/* VIEW DETAILS - NO ALERT */
+/* VIEW DETAILS MODAL */
 document.querySelectorAll(".view-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -101,17 +103,17 @@ document.querySelectorAll(".view-btn").forEach((btn) => {
     const card = btn.closest(".product-card");
     if (!card) return;
 
-    const product = {
+    currentProduct = {
       name: card.dataset.name,
       price: Number(card.dataset.price),
       image: card.dataset.image,
       details: card.dataset.details || ""
     };
 
-    if (modalImage) modalImage.src = product.image;
-    if (modalName) modalName.textContent = product.name;
-    if (modalPrice) modalPrice.textContent = formatMoney(product.price);
-    if (modalDetails) modalDetails.textContent = product.details;
+    if (modalImage) modalImage.src = currentProduct.image;
+    if (modalName) modalName.textContent = currentProduct.name;
+    if (modalPrice) modalPrice.textContent = formatMoney(currentProduct.price);
+    if (modalDetails) modalDetails.textContent = currentProduct.details;
 
     if (modal) modal.classList.add("show");
   });
@@ -129,8 +131,10 @@ if (closeModal && modal) {
   });
 }
 
-/* ORDER NOW */
+/* CARD ORDER NOW */
 document.querySelectorAll(".order-btn").forEach((btn) => {
+  if (btn.id === "modalOrderBtn") return;
+
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
 
@@ -144,10 +148,25 @@ document.querySelectorAll(".order-btn").forEach((btn) => {
       quantity: 1
     };
 
-    localStorage.setItem("arthurmallghCheckoutProduct", JSON.stringify(product));
-    window.location.href = "checkout.html";
+    goToCheckout(product);
   });
 });
+
+/* MODAL ORDER NOW */
+if (modalOrderBtn) {
+  modalOrderBtn.addEventListener("click", () => {
+    if (!currentProduct) return;
+
+    const product = {
+      name: currentProduct.name,
+      price: Number(currentProduct.price),
+      image: currentProduct.image,
+      quantity: 1
+    };
+
+    goToCheckout(product);
+  });
+}
 
 /* CHECKOUT PAGE */
 function renderSingleCheckoutProduct() {
@@ -183,9 +202,7 @@ if (checkoutForm) {
 
     const singleProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
 
-    if (!singleProduct) {
-      return;
-    }
+    if (!singleProduct) return;
 
     const customerName = document.getElementById("customerName").value.trim();
     const customerPhone = document.getElementById("customerPhone").value.trim();
@@ -233,5 +250,4 @@ Message: ${message}`;
 
 /* INIT */
 updateCartCountFromCheckoutProduct();
-applyCategoryFromUrl();
 renderSingleCheckoutProduct();

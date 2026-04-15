@@ -8,57 +8,67 @@
 </head>
 <body>
 
-<header class="topbar">
-  <button class="menu-icon" id="menuBtn">&#9776;</button>
+  <header class="topbar">
+    <button class="menu-icon" id="menuBtn">&#9776;</button>
 
-  <a href="index.html" class="logo">
-    <img src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo" />
-    <span>ArthurmallGh</span>
+    <a href="index.html" class="logo">
+      <img src="https://i.imgur.com/c3Xsndz.png" alt="ArthurmallGh logo" />
+      <span>ArthurmallGh</span>
+    </a>
+
+    <a href="cart.html" class="cart-icon">
+      🛒
+      <small id="cartCount">0</small>
+    </a>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html">Cart</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="cart-page">
+    <div class="section-title">
+      <span></span>
+      <h2>YOUR CART</h2>
+      <span></span>
+    </div>
+
+    <div id="cartItems" class="cart-list">
+      <div class="empty-cart-box">
+        <h3>No product selected yet</h3>
+        <p>Please go to the shop and click Order Now.</p>
+        <a href="shop.html" class="order-btn back-shop-btn">Go to Shop</a>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <h3>Cart Summary</h3>
+      <p>Total Items: <strong id="cartTotalItems">0</strong></p>
+      <p>Total Price: <strong id="cartTotalPrice">₵0</strong></p>
+      <a href="checkout.html" class="order-btn cart-checkout-btn">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <img class="footer-logo" src="https://i.imgur.com/c3Xsndz.png" alt="ArthurmallGh logo">
+      <h3>ArthurmallGh</h3>
+      <p>Quality bags, smart watches, electronic devices and more.</p>
+      <p>Phone: +233 57 084 8484</p>
+      <p>Email: ericarthur2020@yahoo.com</p>
+      <p>Location: Accra, Ghana</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/233570848484" class="whatsapp-float" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
   </a>
 
-  <a href="cart.html" class="cart-icon">
-    🛒
-    <small id="cartCount">0</small>
-  </a>
-</header>
-
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="cart.html">Cart</a>
-  <a href="checkout.html">Checkout</a>
-</nav>
-
-<section class="section">
-  <div class="section-title">
-    <span></span>
-    <h2>YOUR CART</h2>
-    <span></span>
-  </div>
-
-  <div id="cartItems" class="cart-list"></div>
-
-  <div class="cart-summary">
-    <h3>Cart Summary</h3>
-    <p>Total Items: <strong id="cartTotalItems">0</strong></p>
-    <p>Total Price: <strong id="cartTotalPrice">₵0</strong></p>
-    <a href="checkout.html" class="btn cart-checkout-btn">Proceed to Checkout</a>
-  </div>
-</section>
-<footer class="footer">
-  <div class="footer-brand">
-    <img src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo" />
-    <h3>ArthurmallGh</h3>
-  </div>
-
-  <p>Quality bags, smart watches, electronic devices and more.</p>
-  <p>Phone: +233 57 084 8484</p>
-  <p>Email: ericarthur2020@yahoo.com</p>
-</footer>
-<a href="https://wa.me/233570848484" class="whatsapp-float" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28">
-</a>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

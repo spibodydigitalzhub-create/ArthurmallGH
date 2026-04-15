@@ -2,57 +2,50 @@ const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const cartCount = document.getElementById("cartCount");
 
+const filterButtons = document.querySelectorAll(".filter-btn");
+const productCards = document.querySelectorAll(".product-card");
+const searchInput = document.getElementById("searchInput");
+
+const modal = document.getElementById("productModal");
+const closeModal = document.getElementById("closeModal");
+const modalImage = document.getElementById("modalImage");
+const modalName = document.getElementById("modalName");
+const modalPrice = document.getElementById("modalPrice");
+const modalDetails = document.getElementById("modalDetails");
+
+const checkoutItems = document.getElementById("checkoutItems");
+const checkoutTotalItems = document.getElementById("checkoutTotalItems");
+const checkoutTotalPrice = document.getElementById("checkoutTotalPrice");
+const checkoutForm = document.getElementById("checkoutForm");
+
+const contactForm = document.getElementById("contactForm");
+
+const whatsappNumber = "233570848484";
+const contactWhatsappNumber = "233570848484";
+
+/* MENU */
 if (menuBtn && mobileMenu) {
   menuBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("show");
   });
 }
 
-/* CART STORAGE */
-function getCart() {
-  return JSON.parse(localStorage.getItem("arthurmallghCart")) || [];
-}
-
-function saveCart(cart) {
-  localStorage.setItem("arthurmallghCart", JSON.stringify(cart));
-}
-
-function updateCartCount() {
-  const cart = getCart();
-  const total = cart.reduce((sum, item) => sum + item.quantity, 0);
-  if (cartCount) cartCount.textContent = total;
-}
-
-function addToCart(product) {
-  const cart = getCart();
-  const existing = cart.find(item => item.name === product.name);
-
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push({
-      name: product.name,
-      price: Number(product.price),
-      image: product.image,
-      quantity: 1
-    });
-  }
-
-  saveCart(cart);
-  updateCartCount();
-  alert(product.name + " added successfully");
-}
-
+/* HELPERS */
 function formatMoney(amount) {
   return "₵" + Number(amount).toLocaleString();
 }
 
-/* FILTER */
-const filterButtons = document.querySelectorAll(".filter-btn");
-const productCards = document.querySelectorAll(".product-card");
-const searchInput = document.getElementById("searchInput");
+function updateCartCountFromCheckoutProduct() {
+  const savedProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
+  if (cartCount) {
+    cartCount.textContent = savedProduct ? "1" : "0";
+  }
+}
 
+/* FILTER */
 function applyFilterAndSearch(selectedFilter = null) {
+  if (!productCards.length) return;
+
   const activeFilter =
     selectedFilter ||
     document.querySelector(".filter-btn.active")?.dataset.filter ||
@@ -60,7 +53,7 @@ function applyFilterAndSearch(selectedFilter = null) {
 
   const searchValue = searchInput ? searchInput.value.toLowerCase() : "";
 
-  productCards.forEach(card => {
+  productCards.forEach((card) => {
     const category = card.dataset.category;
     const name = card.querySelector("h3").textContent.toLowerCase();
 
@@ -72,9 +65,9 @@ function applyFilterAndSearch(selectedFilter = null) {
 }
 
 if (filterButtons.length) {
-  filterButtons.forEach(btn => {
+  filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      filterButtons.forEach(b => b.classList.remove("active"));
+      filterButtons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       applyFilterAndSearch(btn.dataset.filter);
     });
@@ -94,37 +87,26 @@ function applyCategoryFromUrl() {
 
   const matchingButton = document.querySelector(`.filter-btn[data-filter="${category}"]`);
   if (matchingButton) {
-    filterButtons.forEach(btn => btn.classList.remove("active"));
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
     matchingButton.classList.add("active");
     applyFilterAndSearch(category);
   }
 }
 
-/* MODAL */
-const modal = document.getElementById("productModal");
-const closeModal = document.getElementById("closeModal");
-const modalImage = document.getElementById("modalImage");
-const modalName = document.getElementById("modalName");
-const modalPrice = document.getElementById("modalPrice");
-const modalDetails = document.getElementById("modalDetails");
-const modalAdd = document.getElementById("modalAdd");
-
-let currentProduct = null;
-
-document.querySelectorAll(".view-btn").forEach(btn => {
+/* VIEW DETAILS - NO ALERT */
+document.querySelectorAll(".view-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
 
     const card = btn.closest(".product-card");
+    if (!card) return;
 
     const product = {
       name: card.dataset.name,
       price: Number(card.dataset.price),
       image: card.dataset.image,
-      details: card.dataset.details
+      details: card.dataset.details || ""
     };
-
-    currentProduct = product;
 
     if (modalImage) modalImage.src = product.image;
     if (modalName) modalName.textContent = product.name;
@@ -147,96 +129,109 @@ if (closeModal && modal) {
   });
 }
 
-if (modalAdd) {
-  modalAdd.addEventListener("click", () => {
-    if (currentProduct) addToCart(currentProduct);
-  });
-}
-
-/* ADD TO CART BUTTONS */
-document.querySelectorAll(".add-cart-btn").forEach(btn => {
+/* ORDER NOW */
+document.querySelectorAll(".order-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
 
     const card = btn.closest(".product-card");
+    if (!card) return;
 
-    addToCart({
+    const product = {
       name: card.dataset.name,
       price: Number(card.dataset.price),
-      image: card.dataset.image
-    });
+      image: card.dataset.image,
+      quantity: 1
+    };
+
+    localStorage.setItem("arthurmallghCheckoutProduct", JSON.stringify(product));
+    window.location.href = "checkout.html";
   });
 });
 
-/* CART PAGE */
-function renderCartPage() {
-  const cartItems = document.getElementById("cartItems");
-  const cartTotalItems = document.getElementById("cartTotalItems");
-  const cartTotalPrice = document.getElementById("cartTotalPrice");
+/* CHECKOUT PAGE */
+function renderSingleCheckoutProduct() {
+  if (!checkoutItems) return;
 
-  if (!cartItems) return;
+  const singleProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
 
-  const cart = getCart();
-
-  if (cart.length === 0) {
-    cartItems.innerHTML = "<p>Your cart is empty.</p>";
-    if (cartTotalItems) cartTotalItems.textContent = "0";
-    if (cartTotalPrice) cartTotalPrice.textContent = "₵0";
+  if (!singleProduct) {
+    checkoutItems.innerHTML = "<p>No product selected.</p>";
+    if (checkoutTotalItems) checkoutTotalItems.textContent = "0";
+    if (checkoutTotalPrice) checkoutTotalPrice.textContent = "₵0";
     return;
   }
 
-  let totalItems = 0;
-  let totalPrice = 0;
-  cartItems.innerHTML = "";
-
-  cart.forEach((item, index) => {
-    totalItems += item.quantity;
-    totalPrice += item.price * item.quantity;
-
-    const div = document.createElement("div");
-    div.className = "cart-item";
-    div.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
+  checkoutItems.innerHTML = `
+    <div class="checkout-item">
       <div>
-        <h3>${item.name}</h3>
-        <p>Price: ${formatMoney(item.price)}</p>
-        <p>Quantity: ${item.quantity}</p>
-        <p>Total: ${formatMoney(item.price * item.quantity)}</p>
-        <button class="remove-btn" data-index="${index}">Remove</button>
+        <strong>${singleProduct.name}</strong><br>
+        <small>Qty: 1 × ${formatMoney(singleProduct.price)}</small>
       </div>
-    `;
-    cartItems.appendChild(div);
+      <strong>${formatMoney(singleProduct.price)}</strong>
+    </div>
+  `;
+
+  if (checkoutTotalItems) checkoutTotalItems.textContent = "1";
+  if (checkoutTotalPrice) checkoutTotalPrice.textContent = formatMoney(singleProduct.price);
+}
+
+/* CHECKOUT FORM */
+if (checkoutForm) {
+  checkoutForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const singleProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
+
+    if (!singleProduct) {
+      return;
+    }
+
+    const customerName = document.getElementById("customerName").value.trim();
+    const customerPhone = document.getElementById("customerPhone").value.trim();
+    const customerAddress = document.getElementById("customerAddress").value.trim();
+    const customerNote = document.getElementById("customerNote").value.trim();
+
+    const message = `Hello, I want to place an order.
+
+Product: ${singleProduct.name}
+Price: ${formatMoney(singleProduct.price)}
+
+Name: ${customerName}
+Phone: ${customerPhone}
+Address: ${customerAddress}
+Note: ${customerNote || "None"}`;
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   });
+}
 
-  if (cartTotalItems) cartTotalItems.textContent = totalItems;
-  if (cartTotalPrice) cartTotalPrice.textContent = formatMoney(totalPrice);
+/* CONTACT FORM */
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  document.querySelectorAll(".remove-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const index = Number(btn.dataset.index);
-      const cart = getCart();
-      cart.splice(index, 1);
-      saveCart(cart);
-      updateCartCount();
-      renderCartPage();
-    });
+    const name = document.getElementById("contactName").value.trim();
+    const phone = document.getElementById("contactPhone").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+
+    const text = `Hello, I want to make an inquiry.
+
+Name: ${name}
+Phone: ${phone}
+Message: ${message}`;
+
+    window.open(
+      `https://wa.me/${contactWhatsappNumber}?text=${encodeURIComponent(text)}`,
+      "_blank"
+    );
   });
 }
 
 /* INIT */
-updateCartCount();
-renderCartPage();
+updateCartCountFromCheckoutProduct();
 applyCategoryFromUrl();
-const viewButtons = document.querySelectorAll(".view-btn");
-
-viewButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const card = btn.closest(".product-card");
-
-    const name = card.querySelector("h3").textContent;
-    const price = card.querySelector(".price").textContent;
-    const image = card.querySelector("img").src;
-
-    alert(name + "\n" + price);
-});
-});
+renderSingleCheckoutProduct();

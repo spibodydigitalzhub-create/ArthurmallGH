@@ -735,3 +735,13 @@ body {
   max-width: 1400px;
   margin: auto;
 }
+.order-btn {
+  width: 100%;
+  padding: 10px 12px;
+  background: #d71920;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}

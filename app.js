@@ -52,6 +52,17 @@ function saveSelectedProduct(product) {
 
 function goToCheckout(product) {
   saveSelectedProduct(product);
+
+  // META PIXEL: checkout started
+  if (typeof fbq !== "undefined") {
+    fbq("track", "InitiateCheckout", {
+      content_name: product.name,
+      content_type: "product",
+      value: Number(product.price),
+      currency: "GHS"
+    });
+  }
+
   window.location.href = "checkout.html";
 }
 
@@ -114,6 +125,16 @@ document.querySelectorAll(".view-btn").forEach((btn) => {
     if (modalName) modalName.textContent = currentProduct.name;
     if (modalPrice) modalPrice.textContent = formatMoney(currentProduct.price);
     if (modalDetails) modalDetails.textContent = currentProduct.details;
+
+    // META PIXEL: product viewed
+    if (typeof fbq !== "undefined") {
+      fbq("track", "ViewContent", {
+        content_name: currentProduct.name,
+        content_type: "product",
+        value: Number(currentProduct.price),
+        currency: "GHS"
+      });
+    }
 
     if (modal) modal.classList.add("show");
   });
@@ -209,6 +230,17 @@ if (checkoutForm) {
     const customerAddress = document.getElementById("customerAddress").value.trim();
     const customerNote = document.getElementById("customerNote").value.trim();
 
+    // META PIXEL: lead generated from checkout
+    if (typeof fbq !== "undefined") {
+      fbq("track", "Lead");
+      fbq("trackCustom", "WhatsAppOrder", {
+        content_name: singleProduct.name,
+        content_type: "product",
+        value: Number(singleProduct.price),
+        currency: "GHS"
+      });
+    }
+
     const message = `Hello, I want to place an order.
 
 Product: ${singleProduct.name}
@@ -234,6 +266,12 @@ if (contactForm) {
     const name = document.getElementById("contactName").value.trim();
     const phone = document.getElementById("contactPhone").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
+
+    // META PIXEL: contact / inquiry
+    if (typeof fbq !== "undefined") {
+      fbq("track", "Contact");
+      fbq("trackCustom", "WhatsAppInquiry");
+    }
 
     const text = `Hello, I want to make an inquiry.
 

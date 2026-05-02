@@ -770,3 +770,19 @@ a {
     font-size: 15px;
   }
 }
+.badge.out-stock {
+  background: #777;
+  color: #fff;
+}
+
+.order-btn.disabled {
+  background: #777;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.product-note {
+  font-size: 13px;
+  color: #c0392b;
+  font-weight: 600;
+  margin-top: 6px;
+}

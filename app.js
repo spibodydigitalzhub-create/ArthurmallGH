@@ -38,8 +38,13 @@ function formatMoney(amount) {
   return "₵" + Number(amount).toLocaleString();
 }
 
+function isOutOfStock(stockValue) {
+  return stockValue === "out";
+}
+
 function updateCartCountFromCheckoutProduct() {
   const savedProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
+
   if (cartCount) {
     cartCount.textContent = savedProduct ? "1" : "0";
   }
@@ -64,6 +69,20 @@ function goToCheckout(product) {
   }
 
   window.location.href = "checkout.html";
+}
+
+function setModalOrderButton(stockStatus) {
+  if (!modalOrderBtn) return;
+
+  if (isOutOfStock(stockStatus)) {
+    modalOrderBtn.textContent = "Out of Stock";
+    modalOrderBtn.disabled = true;
+    modalOrderBtn.classList.add("disabled");
+  } else {
+    modalOrderBtn.textContent = "Order Now";
+    modalOrderBtn.disabled = false;
+    modalOrderBtn.classList.remove("disabled");
+  }
 }
 
 /* FILTER */
@@ -118,13 +137,16 @@ document.querySelectorAll(".view-btn").forEach((btn) => {
       name: card.dataset.name,
       price: Number(card.dataset.price),
       image: card.dataset.image,
-      details: card.dataset.details || ""
+      details: card.dataset.details || "",
+      stock: card.dataset.stock || "in"
     };
 
     if (modalImage) modalImage.src = currentProduct.image;
     if (modalName) modalName.textContent = currentProduct.name;
     if (modalPrice) modalPrice.textContent = formatMoney(currentProduct.price);
     if (modalDetails) modalDetails.textContent = currentProduct.details;
+
+    setModalOrderButton(currentProduct.stock);
 
     // META PIXEL: product viewed
     if (typeof fbq !== "undefined") {
@@ -162,6 +184,11 @@ document.querySelectorAll(".order-btn").forEach((btn) => {
     const card = btn.closest(".product-card");
     if (!card) return;
 
+    if (isOutOfStock(card.dataset.stock)) {
+      alert("Sorry, this product is currently out of stock.");
+      return;
+    }
+
     const product = {
       name: card.dataset.name,
       price: Number(card.dataset.price),
@@ -177,6 +204,11 @@ document.querySelectorAll(".order-btn").forEach((btn) => {
 if (modalOrderBtn) {
   modalOrderBtn.addEventListener("click", () => {
     if (!currentProduct) return;
+
+    if (isOutOfStock(currentProduct.stock)) {
+      alert("Sorry, this product is currently out of stock.");
+      return;
+    }
 
     const product = {
       name: currentProduct.name,

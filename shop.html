@@ -5,26 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop | ArthurmallGh</title>
   <link rel="stylesheet" href="style.css"/>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '884108644688658');
-fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=884108644688658&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '884108644688658');
+  fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=884108644688658&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
+
 <body>
 
   <header class="topbar">
@@ -34,8 +37,6 @@ fbq('track', 'PageView');
       <img src="https://i.imgur.com/c3Xsndz.png" alt="ArthurmallGh logo" />
       <span>ArthurmallGh</span>
     </a>
-
-   
   </header>
 
   <nav class="mobile-menu" id="mobileMenu">
@@ -56,15 +57,15 @@ fbq('track', 'PageView');
 
     <input type="text" id="searchInput" class="search-box" placeholder="Search products..." />
 
-<div class="filter-buttons">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="bag">Bags</button>
-  <button class="filter-btn" data-filter="watch">Watches</button>
-  <button class="filter-btn" data-filter="electronics">Electronics</button>
-  <button class="filter-btn" data-filter="shoe-270">Shoes ₵270</button>
-  <button class="filter-btn" data-filter="shoe-250">Shoes ₵250</button>
-  <button class="filter-btn" data-filter="shoe-370">Premium Shoe</button>
-</div>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bag">Bags</button>
+      <button class="filter-btn" data-filter="watch">Watches</button>
+      <button class="filter-btn" data-filter="electronics">Electronics</button>
+      <button class="filter-btn" data-filter="shoe-270">Shoes ₵270</button>
+      <button class="filter-btn" data-filter="shoe-250">Shoes ₵250</button>
+      <button class="filter-btn" data-filter="shoe-370">Premium Shoe</button>
+    </div>
 
     <div class="product-grid">
 
@@ -74,8 +75,9 @@ fbq('track', 'PageView');
         data-name="Leather Bag"
         data-price="265"
         data-image="https://i.imgur.com/dtGfF0U.jpeg"
-        data-details="Free delivery in Accra. Payment on delivery. High quality and durable material.">
-        <span class="badge">-20%</span>
+        data-stock="out"
+        data-details="Free delivery in Accra. Payment on delivery. High quality and durable material. This product is currently out of stock.">
+        <span class="badge out-stock">Out of Stock</span>
         <div class="product-image-wrap">
           <img src="https://i.imgur.com/dtGfF0U.jpeg" alt="Leather Bag">
         </div>
@@ -92,8 +94,9 @@ fbq('track', 'PageView');
         data-name="Travel Bag"
         data-price="265"
         data-image="https://i.imgur.com/3l9GV07.jpeg"
-        data-details="Free delivery in Accra. Payment on delivery. Premium travel bag for daily use.">
-        <span class="badge">-15%</span>
+        data-stock="out"
+        data-details="Free delivery in Accra. Payment on delivery. Premium travel bag for daily use. This product is currently out of stock.">
+        <span class="badge out-stock">Out of Stock</span>
         <div class="product-image-wrap">
           <img src="https://i.imgur.com/3l9GV07.jpeg" alt="Travel Bag">
         </div>
@@ -110,8 +113,9 @@ fbq('track', 'PageView');
         data-name="Office Bag"
         data-price="265"
         data-image="https://i.imgur.com/XM1f3gl.jpeg"
-        data-details="Free delivery in Accra. Payment on delivery. Perfect for office and formal use.">
-        <span class="badge">-10%</span>
+        data-stock="out"
+        data-details="Free delivery in Accra. Payment on delivery. Perfect for office and formal use. This product is currently out of stock.">
+        <span class="badge out-stock">Out of Stock</span>
         <div class="product-image-wrap">
           <img src="https://i.imgur.com/XM1f3gl.jpeg" alt="Office Bag">
         </div>
@@ -129,8 +133,8 @@ fbq('track', 'PageView');
         data-price="265"
         data-image="https://i.imgur.com/m1iCVCW.jpeg"
         data-stock="out"
-        data-details="Free delivery in Accra. Payment on delivery. Stylish and compact everyday bag.">
-        <span class="badge">-18%</span>
+        data-details="Free delivery in Accra. Payment on delivery. Stylish and compact everyday bag. This product is currently out of stock.">
+        <span class="badge out-stock">Out of Stock</span>
         <div class="product-image-wrap">
           <img src="https://i.imgur.com/m1iCVCW.jpeg" alt="Mini Fashion Bag">
         </div>
@@ -146,161 +150,59 @@ fbq('track', 'PageView');
         data-category="bag"
         data-name="Hand Bag"
         data-price="235"
-<!-- BAGS -->
-<div class="product-card"
-  data-category="bag"
-  data-name="Leather Bag"
-  data-price="265"
-  data-image="https://i.imgur.com/dtGfF0U.jpeg"
-  data-stock="out"
-  data-details="Free delivery in Accra. Payment on delivery. High quality and durable material. This product is currently out of stock.">
-  <span class="badge out-stock">Out of Stock</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/dtGfF0U.jpeg" alt="Leather Bag">
-  </div>
-  <h3>Leather Bag</h3>
-  <p class="price">₵265 <span>₵300</span></p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn disabled" disabled>Out of Stock</button>
-  </div>
-</div>
+        data-image="https://i.imgur.com/MPiNhJa.jpeg"
+        data-details="Free delivery in Accra. Payment on delivery. Elegant hand bag with durable finish. No wallet included.">
+        <span class="badge">-12%</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/MPiNhJa.jpeg" alt="Hand Bag">
+        </div>
+        <h3>Hand Bag</h3>
+        <p class="price">₵235 <span>₵290</span></p>
+        <p class="product-note">No wallet included</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-<div class="product-card"
-  data-category="bag"
-<!-- BAGS -->
-<div class="product-card"
-  data-category="bag"
-  data-name="Leather Bag"
-  data-price="265"
-  data-image="https://i.imgur.com/dtGfF0U.jpeg"
-  data-stock="out"
-  data-details="Free delivery in Accra. Payment on delivery. High quality and durable material. This product is currently out of stock.">
-  <span class="badge out-stock">Out of Stock</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/dtGfF0U.jpeg" alt="Leather Bag">
-  </div>
-  <h3>Leather Bag</h3>
-  <p class="price">₵265 <span>₵300</span></p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn disabled" disabled>Out of Stock</button>
-  </div>
-</div>
+      <div class="product-card"
+        data-category="bag"
+        data-name="Luxury Bag"
+        data-price="235"
+        data-image="https://i.imgur.com/GFFZsml.jpeg"
+        data-details="Free delivery in Accra. Payment on delivery. Premium luxury bag with classy look. No wallet included.">
+        <span class="badge">-14%</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/GFFZsml.jpeg" alt="Luxury Bag">
+        </div>
+        <h3>Luxury Bag</h3>
+        <p class="price">₵235 <span>₵290</span></p>
+        <p class="product-note">No wallet included</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-<div class="product-card"
-  data-category="bag"
-  data-name="Travel Bag"
-  data-price="265"
-  data-image="https://i.imgur.com/3l9GV07.jpeg"
-  data-stock="out"
-  data-details="Free delivery in Accra. Payment on delivery. Premium travel bag for daily use. This product is currently out of stock.">
-  <span class="badge out-stock">Out of Stock</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/3l9GV07.jpeg" alt="Travel Bag">
-  </div>
-  <h3>Travel Bag</h3>
-  <p class="price">₵265 <span>₵300</span></p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn disabled" disabled>Out of Stock</button>
-  </div>
-</div>
+      <div class="product-card"
+        data-category="bag"
+        data-name="Classic Bag"
+        data-price="235"
+        data-image="https://i.imgur.com/QARHYGx.jpeg"
+        data-details="Free delivery in Accra. Payment on delivery. Classic bag suitable for different occasions. No wallet included.">
+        <span class="badge">-17%</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/QARHYGx.jpeg" alt="Classic Bag">
+        </div>
+        <h3>Classic Bag</h3>
+        <p class="price">₵235 <span>₵290</span></p>
+        <p class="product-note">No wallet included</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-<div class="product-card"
-  data-category="bag"
-  data-name="Office Bag"
-  data-price="265"
-  data-image="https://i.imgur.com/XM1f3gl.jpeg"
-  data-stock="out"
-  data-details="Free delivery in Accra. Payment on delivery. Perfect for office and formal use. This product is currently out of stock.">
-  <span class="badge out-stock">Out of Stock</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/XM1f3gl.jpeg" alt="Office Bag">
-  </div>
-  <h3>Office Bag</h3>
-  <p class="price">₵265 <span>₵300</span></p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn disabled" disabled>Out of Stock</button>
-  </div>
-</div>
-
-<div class="product-card"
-  data-category="bag"
-  data-name="Mini Fashion Bag"
-  data-price="265"
-  data-image="https://i.imgur.com/m1iCVCW.jpeg"
-  data-stock="out"
-  data-details="Free delivery in Accra. Payment on delivery. Stylish and compact everyday bag. This product is currently out of stock.">
-  <span class="badge out-stock">Out of Stock</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/m1iCVCW.jpeg" alt="Mini Fashion Bag">
-  </div>
-  <h3>Mini Fashion Bag</h3>
-  <p class="price">₵265 <span>₵300</span></p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn disabled" disabled>Out of Stock</button>
-  </div>
-</div>
-
-<div class="product-card"
-  data-category="bag"
-  data-name="Hand Bag"
-  data-price="235"
-  data-image="https://i.imgur.com/MPiNhJa.jpeg"
-  data-details="Free delivery in Accra. Payment on delivery. Elegant hand bag with durable finish. No wallet included.">
-  <span class="badge">-12%</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/MPiNhJa.jpeg" alt="Hand Bag">
-  </div>
-  <h3>Hand Bag</h3>
-  <p class="price">₵235 <span>₵290</span></p>
-  <p class="product-note">No wallet included</p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
-
-<div class="product-card"
-  data-category="bag"
-  data-name="Luxury Bag"
-  data-price="235"
-  data-image="https://i.imgur.com/GFFZsml.jpeg"
-  data-details="Free delivery in Accra. Payment on delivery. Premium luxury bag with classy look. No wallet included.">
-  <span class="badge">-14%</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/GFFZsml.jpeg" alt="Luxury Bag">
-  </div>
-  <h3>Luxury Bag</h3>
-  <p class="price">₵235 <span>₵290</span></p>
-  <p class="product-note">No wallet included</p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
-
-<div class="product-card"
-  data-category="bag"
-  data-name="Classic Bag"
-  data-price="235"
-  data-image="https://i.imgur.com/QARHYGx.jpeg"
-  data-details="Free delivery in Accra. Payment on delivery. Classic bag suitable for different occasions. No wallet included.">
-  <span class="badge">-17%</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/QARHYGx.jpeg" alt="Classic Bag">
-  </div>
-  <h3>Classic Bag</h3>
-  <p class="price">₵235 <span>₵290</span></p>
-  <p class="product-note">No wallet included</p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
       <!-- WATCHES -->
       <div class="product-card"
         data-category="watch"
@@ -374,210 +276,208 @@ fbq('track', 'PageView');
           <button class="order-btn">Order Now</button>
         </div>
       </div>
- <!-- SHOES CATEGORY 1 - ₵270 -->
-<div class="product-card" data-category="shoe-270" data-name="Shoe 1" data-price="270" data-image="https://i.imgur.com/OSPidfs.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
-  <span class="badge">New</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/OSPidfs.jpeg" alt="Shoe 1">
-  </div>
-  <h3>Fashion Shoe</h3>
-  <p class="price">₵270</p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
 
-<div class="product-card" data-category="shoe-270" data-name="shoe 2" data-price="270" data-image="https://i.imgur.com/1oyKqIc.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
-  <span class="badge">New</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/1oyKqIc.jpeg" alt="Shoe 2">
-  </div>
-  <h3>Fashion Shoe</h3>
-  <p class="price">₵270</p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
+      <!-- SHOES CATEGORY 1 - ₵270 -->
+      <div class="product-card" data-category="shoe-270" data-name="Fashion Shoe 1" data-price="270" data-image="https://i.imgur.com/OSPidfs.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
+        <span class="badge">New</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/OSPidfs.jpeg" alt="Fashion Shoe 1">
+        </div>
+        <h3>Fashion Shoe 1</h3>
+        <p class="price">₵270</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-<div class="product-card" data-category="shoe-270" data-name="Shoe 3" data-price="270" data-image="https://i.imgur.com/MBS6BZy.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
-  <span class="badge">New</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/MBS6BZy.jpeg" alt="Shoe 3">
-  </div>
-  <h3>Fashion Shoe</h3>
-  <p class="price">₵270</p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
+      <div class="product-card" data-category="shoe-270" data-name="Fashion Shoe 2" data-price="270" data-image="https://i.imgur.com/1oyKqIc.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
+        <span class="badge">New</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/1oyKqIc.jpeg" alt="Fashion Shoe 2">
+        </div>
+        <h3>Fashion Shoe 2</h3>
+        <p class="price">₵270</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-<div class="product-card" data-category="shoe-270" data-name="Shoe 4" data-price="270" data-image="https://i.imgur.com/vLxYYrw.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
-  <span class="badge">New</span>
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/vLxYYrw.jpeg" alt="Shoe 4">
-  </div>
-  <h3>Fashion Shoe</h3>
-  <p class="price">₵270</p>
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
+      <div class="product-card" data-category="shoe-270" data-name="Fashion Shoe 3" data-price="270" data-image="https://i.imgur.com/MBS6BZy.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
+        <span class="badge">New</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/MBS6BZy.jpeg" alt="Fashion Shoe 3">
+        </div>
+        <h3>Fashion Shoe 3</h3>
+        <p class="price">₵270</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-<!-- SHOES CATEGORY 2 - ₵250 -->
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 1" data-price="250" data-image="https://i.imgur.com/8TRyTp8.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/8TRyTp8.jpeg" alt="Fashion Shoe 1"></div>
-  <h3>Fashion Shoe 1</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-270" data-name="Fashion Shoe 4" data-price="270" data-image="https://i.imgur.com/vLxYYrw.jpeg" data-details="Quality shoe available for order. Price is ₵270. Payment on delivery available.">
+        <span class="badge">New</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/vLxYYrw.jpeg" alt="Fashion Shoe 4">
+        </div>
+        <h3>Fashion Shoe 4</h3>
+        <p class="price">₵270</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 2" data-price="250" data-image="https://i.imgur.com/9ONbskE.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/9ONbskE.jpeg" alt="Fashion Shoe 2"></div>
-  <h3>Fashion Shoe 2</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <!-- SHOES CATEGORY 2 - ₵250 -->
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 1" data-price="250" data-image="https://i.imgur.com/8TRyTp8.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/8TRyTp8.jpeg" alt="Fashion Shoe 1"></div>
+        <h3>Fashion Shoe 1</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 3" data-price="250" data-image="https://i.imgur.com/6BwYwtI.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/6BwYwtI.jpeg" alt="Fashion Shoe 3"></div>
-  <h3>Fashion Shoe 3</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 2" data-price="250" data-image="https://i.imgur.com/9ONbskE.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/9ONbskE.jpeg" alt="Fashion Shoe 2"></div>
+        <h3>Fashion Shoe 2</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 4" data-price="250" data-image="https://i.imgur.com/ijbh5Kl.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/ijbh5Kl.jpeg" alt="Fashion Shoe 4"></div>
-  <h3>Fashion Shoe 4</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 3" data-price="250" data-image="https://i.imgur.com/6BwYwtI.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/6BwYwtI.jpeg" alt="Fashion Shoe 3"></div>
+        <h3>Fashion Shoe 3</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 5" data-price="250" data-image="https://i.imgur.com/t1Jvpc4.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/t1Jvpc4.jpeg" alt="Fashion Shoe 5"></div>
-  <h3>Fashion Shoe 5</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 4" data-price="250" data-image="https://i.imgur.com/ijbh5Kl.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/ijbh5Kl.jpeg" alt="Fashion Shoe 4"></div>
+        <h3>Fashion Shoe 4</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 6" data-price="250" data-image="https://i.imgur.com/gPB78md.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/gPB78md.jpeg" alt="Fashion Shoe 6"></div>
-  <h3>Fashion Shoe 6</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 5" data-price="250" data-image="https://i.imgur.com/t1Jvpc4.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/t1Jvpc4.jpeg" alt="Fashion Shoe 5"></div>
+        <h3>Fashion Shoe 5</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 7" data-price="250" data-image="https://i.imgur.com/R7cxVwh.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/R7cxVwh.jpeg" alt="Fashion Shoe 7"></div>
-  <h3>Fashion Shoe 7</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 6" data-price="250" data-image="https://i.imgur.com/gPB78md.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/gPB78md.jpeg" alt="Fashion Shoe 6"></div>
+        <h3>Fashion Shoe 6</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 8" data-price="250" data-image="https://i.imgur.com/BcSUnjM.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/BcSUnjM.jpeg" alt="Fashion Shoe 8"></div>
-  <h3>Fashion Shoe 8</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 7" data-price="250" data-image="https://i.imgur.com/R7cxVwh.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/R7cxVwh.jpeg" alt="Fashion Shoe 7"></div>
+        <h3>Fashion Shoe 7</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 9" data-price="250" data-image="https://i.imgur.com/je7P8gL.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/je7P8gL.jpeg" alt="Fashion Shoe 9"></div>
-  <h3>Fashion Shoe 9</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 8" data-price="250" data-image="https://i.imgur.com/BcSUnjM.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/BcSUnjM.jpeg" alt="Fashion Shoe 8"></div>
+        <h3>Fashion Shoe 8</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 10" data-price="250" data-image="https://i.imgur.com/hgQkwxQ.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/hgQkwxQ.jpeg" alt="Fashion Shoe 10"></div>
-  <h3>Fashion Shoe 10</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 9" data-price="250" data-image="https://i.imgur.com/je7P8gL.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/je7P8gL.jpeg" alt="Fashion Shoe 9"></div>
+        <h3>Fashion Shoe 9</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 11" data-price="250" data-image="https://i.imgur.com/cPePxzu.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/cPePxzu.jpeg" alt="Fashion Shoe 11"></div>
-  <h3>Fashion Shoe 11</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 10" data-price="250" data-image="https://i.imgur.com/hgQkwxQ.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/hgQkwxQ.jpeg" alt="Fashion Shoe 10"></div>
+        <h3>Fashion Shoe 10</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 12" data-price="250" data-image="https://i.imgur.com/1iYOTZm.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/1iYOTZm.jpeg" alt="Fashion Shoe 12"></div>
-  <h3>Fashion Shoe 12</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 11" data-price="250" data-image="https://i.imgur.com/cPePxzu.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/cPePxzu.jpeg" alt="Fashion Shoe 11"></div>
+        <h3>Fashion Shoe 11</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 13" data-price="250" data-image="https://i.imgur.com/LWIARmH.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/LWIARmH.jpeg" alt="Fashion Shoe 13"></div>
-  <h3>Fashion Shoe 13</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 12" data-price="250" data-image="https://i.imgur.com/1iYOTZm.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/1iYOTZm.jpeg" alt="Fashion Shoe 12"></div>
+        <h3>Fashion Shoe 12</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 14" data-price="250" data-image="https://i.imgur.com/IrIQy50.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/IrIQy50.jpeg" alt="Fashion Shoe 14"></div>
-  <h3>Fashion Shoe 14</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 13" data-price="250" data-image="https://i.imgur.com/LWIARmH.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/LWIARmH.jpeg" alt="Fashion Shoe 13"></div>
+        <h3>Fashion Shoe 13</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 15" data-price="250" data-image="https://i.imgur.com/NAdalDL.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/NAdalDL.jpeg" alt="Fashion Shoe 15"></div>
-  <h3>Fashion Shoe 15</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 14" data-price="250" data-image="https://i.imgur.com/IrIQy50.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/IrIQy50.jpeg" alt="Fashion Shoe 14"></div>
+        <h3>Fashion Shoe 14</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-<div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 16" data-price="250" data-image="https://i.imgur.com/OcDM4gr.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
-  <span class="badge">Hot</span>
-  <div class="product-image-wrap"><img src="https://i.imgur.com/OcDM4gr.jpeg" alt="Fashion Shoe 16"></div>
-  <h3>Fashion Shoe 16</h3>
-  <p class="price">₵250</p>
-  <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
-</div>
-<!-- SHOES CATEGORY 3 - ₵370 -->
-<div class="product-card"
-  data-category="shoe-370"
-  data-name="Premium Executive Shoe"
-  data-price="370"
-  data-image="https://i.imgur.com/e7mYOVt.jpeg"
-  data-details="Premium quality shoe available for order. Price is ₵370. Payment on delivery available.">
-  
-  <span class="badge">Premium</span>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 15" data-price="250" data-image="https://i.imgur.com/NAdalDL.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/NAdalDL.jpeg" alt="Fashion Shoe 15"></div>
+        <h3>Fashion Shoe 15</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-  <div class="product-image-wrap">
-    <img src="https://i.imgur.com/e7mYOVt.jpeg" alt="Premium Executive Shoe">
-  </div>
+      <div class="product-card" data-category="shoe-250" data-name="Fashion Shoe 16" data-price="250" data-image="https://i.imgur.com/OcDM4gr.jpeg" data-details="Quality shoe available for order. Price is ₵250. Payment on delivery available.">
+        <span class="badge">Hot</span>
+        <div class="product-image-wrap"><img src="https://i.imgur.com/OcDM4gr.jpeg" alt="Fashion Shoe 16"></div>
+        <h3>Fashion Shoe 16</h3>
+        <p class="price">₵250</p>
+        <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      </div>
 
-  <h3>Premium Executive Shoe</h3>
+      <!-- SHOES CATEGORY 3 - ₵370 -->
+      <div class="product-card"
+        data-category="shoe-370"
+        data-name="Premium Executive Shoe"
+        data-price="370"
+        data-image="https://i.imgur.com/e7mYOVt.jpeg"
+        data-details="Premium quality shoe available for order. Price is ₵370. Payment on delivery available.">
+        <span class="badge">Premium</span>
+        <div class="product-image-wrap">
+          <img src="https://i.imgur.com/e7mYOVt.jpeg" alt="Premium Executive Shoe">
+        </div>
+        <h3>Premium Executive Shoe</h3>
+        <p class="price">₵370</p>
+        <div class="product-actions">
+          <button class="view-btn">View Details</button>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
 
-  <p class="price">₵370</p>
-
-  <div class="product-actions">
-    <button class="view-btn">View Details</button>
-    <button class="order-btn">Order Now</button>
-  </div>
-</div>
     </div>
   </section>
 
@@ -604,7 +504,7 @@ fbq('track', 'PageView');
     <div class="footer-content">
       <img class="footer-logo" src="https://i.imgur.com/c3Xsndz.png" alt="ArthurmallGh logo">
       <h3>ArthurmallGh</h3>
-<p>Quality shoes, bags, smart watches, electronic devices and more.</p>
+      <p>Quality shoes, bags, smart watches, electronic devices and more.</p>
       <p>Phone: +233 57 084 8484</p>
       <p>Email: ericarthur2020@yahoo.com</p>
       <p>Location: Accra, Ghana</p>
@@ -616,13 +516,14 @@ fbq('track', 'PageView');
   </a>
 
   <script src="app.js"></script>
+
   <script>
-fbq('track', 'ViewContent', {
-  content_name: 'ArthurMall Product',
-  content_type: 'product',
-  value: 100,
-  currency: 'GHS'
-});
-</script>
+    fbq('track', 'ViewContent', {
+      content_name: 'ArthurMall Product',
+      content_type: 'product',
+      value: 100,
+      currency: 'GHS'
+    });
+  </script>
 </body>
-  </html>
+</html>

@@ -846,3 +846,22 @@ a {
     flex-direction: column;
   }
 }
+/* ✅ ADD THIS TO YOUR CSS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  gap: 10px;
+  width: 100%;
+}
+
+/* Force specific categories to stay in place visually */
+/* Adjust these class names to match your actual HTML classes */
+.product-card[data-category="smartphones"] { order: 1; }
+.product-card[data-category="watches"] { order: 2; }
+.product-card[data-category="bags"] { order: 3; }
+.product-card[data-category="electronics"] { order: 4; }
+
+/* When filtering, we remove the order constraint so only visible items show */
+.product-grid.filtered .product-card {
+  order: unset !important; 
+}

@@ -85,7 +85,7 @@ function setModalOrderButton(stockStatus) {
   }
 }
 
-/* FILTER */
+/* FILTER - FIXED VERSION */
 function applyFilterAndSearch(selectedFilter = null) {
   if (!productCards.length) return;
 
@@ -94,18 +94,31 @@ function applyFilterAndSearch(selectedFilter = null) {
     document.querySelector(".filter-btn.active")?.dataset.filter ||
     "all";
 
-  const searchValue = searchInput ? searchInput.value.toLowerCase() : "";
+  const searchValue = searchInput ? searchInput.value.toLowerCase().trim() : "";
 
   productCards.forEach((card) => {
-    const category = card.dataset.category;
+    // ✅ FIX: Safely get category with fallback
+    const category = card.dataset.category 
+      ? card.dataset.category.toLowerCase().trim() 
+      : "";
+    
     const name = card.dataset.name
       ? card.dataset.name.toLowerCase()
-      : card.querySelector("h3").textContent.toLowerCase();
+      : (card.querySelector("h3")?.textContent || "").toLowerCase();
 
-    const matchesFilter = activeFilter === "all" || activeFilter === category;
+    // ✅ FIX: Normalize comparison (handle hyphens/spaces)
+    const normalizedFilter = activeFilter.toLowerCase().replace(/[-\s]/g, "");
+    const normalizedCategory = category.replace(/[-\s]/g, "");
+
+    const matchesFilter = 
+      activeFilter === "all" || 
+      normalizedFilter === normalizedCategory ||
+      normalizedCategory.includes(normalizedFilter); // Partial match fallback
+      
     const matchesSearch = name.includes(searchValue);
 
-    card.style.display = matchesFilter && matchesSearch ? "block" : "none";
+    // ✅ FIX: Use display flex/block consistently for grid layouts
+    card.style.display = matchesFilter && matchesSearch ? "" : "none";
   });
 }
 

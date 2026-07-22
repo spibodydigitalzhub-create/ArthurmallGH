@@ -334,3 +334,30 @@ Message: ${message}`;
 /* INIT */
 updateCartCountFromCheckoutProduct();
 renderSingleCheckoutProduct();
+/* AUTO-FILTER FROM URL PARAMETER */
+function getFilterFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('category'); // Returns "bags", "watches", etc.
+}
+
+/* UPDATE YOUR INIT SECTION AT BOTTOM OF app.js */
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCountFromCheckoutProduct();
+  renderSingleCheckoutProduct();
+  
+  // ✅ NEW: Check if we came from a category link
+  const urlCategory = getFilterFromURL();
+  if (urlCategory) {
+    // Find matching filter button and activate it
+    const matchingBtn = document.querySelector(`.filter-btn[data-filter="${urlCategory}"]`);
+    if (matchingBtn) {
+      matchingBtn.click(); // Triggers your existing filter logic
+    } else {
+      // Fallback: manually apply filter if no button exists
+      applyFilterAndSearch(urlCategory);
+    }
+  } else {
+    // Default: show all
+    applyFilterAndSearch('all');
+  }
+});

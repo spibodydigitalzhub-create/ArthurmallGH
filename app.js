@@ -85,51 +85,50 @@ function setModalOrderButton(stockStatus) {
   }
 }
 
-/* FILTER - FIXED VERSION */
 function applyFilterAndSearch(selectedFilter = null) {
-  if (!productCards.length) return;
+  const grid = document.querySelector('.product-grid');
+  if (!grid || !productCards.length) return;
 
-  const activeFilter =
-    selectedFilter ||
-    document.querySelector(".filter-btn.active")?.dataset.filter ||
+  // ✅ STEP 1: Get active filter safely
+  const activeFilter = selectedFilter || 
+    document.querySelector(".filter-btn.active")?.dataset.filter || 
     "all";
 
   const searchValue = searchInput ? searchInput.value.toLowerCase().trim() : "";
+  let visibleCount = 0;
 
+  // ✅ STEP 2: Filter with strict matching
   productCards.forEach((card) => {
-    // ✅ FIX: Safely get category with fallback
-    const category = card.dataset.category 
-      ? card.dataset.category.toLowerCase().trim() 
-      : "";
-    
-    const name = card.dataset.name
-      ? card.dataset.name.toLowerCase()
-      : (card.querySelector("h3")?.textContent || "").toLowerCase();
+    const category = card.dataset.category?.toLowerCase().trim() || "";
+    const name = card.dataset.name?.toLowerCase() || card.querySelector("h3")?.textContent.toLowerCase() || "";
 
-    // ✅ FIX: Normalize comparison (handle hyphens/spaces)
-    const normalizedFilter = activeFilter.toLowerCase().replace(/[-\s]/g, "");
-    const normalizedCategory = category.replace(/[-\s]/g, "");
+    // Normalize strings to handle "bag" vs "bags"
+    const normFilter = activeFilter.replace(/s$/, '').toLowerCase(); // Remove trailing 's'
+    const normCategory = category.replace(/s$/, '').toLowerCase();
 
-    const matchesFilter = 
-      activeFilter === "all" || 
-      normalizedFilter === normalizedCategory ||
-      normalizedCategory.includes(normalizedFilter); // Partial match fallback
-      
+    const matchesFilter = activeFilter === "all" || 
+                          normCategory.includes(normFilter) || 
+                          normFilter.includes(normCategory);
+                          
     const matchesSearch = name.includes(searchValue);
 
-    // ✅ FIX: Use display flex/block consistently for grid layouts
-    card.style.display = matchesFilter && matchesSearch ? "" : "none";
+    if (matchesFilter && matchesSearch) {
+      card.style.display = "block"; // Or "flex" if your cards use flex
+      visibleCount++;
+    } else {
+      card.style.display = "none";
+    }
   });
-}
 
-if (filterButtons.length) {
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filterButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      applyFilterAndSearch(btn.dataset.filter);
-    });
-  });
+  // ✅ STEP 3: FORCE LAYOUT RECALCULATION (The Magic Fix)
+  // This prevents mobile grid from keeping "ghost" spaces or wrong order
+  grid.classList.add('filtered');
+  setTimeout(() => {
+    grid.style.display = 'none';
+    grid.offsetHeight; // Trigger reflow
+    grid.style.display = '';
+    grid.classList.remove('filtered');
+  }, 10);
 }
 
 if (searchInput) {

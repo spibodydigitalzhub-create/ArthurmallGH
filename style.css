@@ -194,8 +194,7 @@ a { text-decoration: none; color: inherit; }
   display: none; align-items: center; justify-content: center;
   padding: 16px; z-index: 9999;
 }
-.product-modal.show { display: flex; }
-.product-modal-content {
+.product-modal.show { display: flex; }.product-modal-content {
   background: var(--white); width: 100%; max-width: 420px;
   border-radius: 20px; padding: 18px; position: relative;
 }
@@ -233,8 +232,7 @@ a { text-decoration: none; color: inherit; }
 .whatsapp-float img { width: 30px; height: 30px; }
 
 /* =========================================
-   13. ✅ CHECKOUT PAGE (INTEGRATED & FIXED)
-       Placed LAST to ensure highest specificity
+   13. CHECKOUT PAGE STYLES
    ========================================= */
 .checkout-section { padding: 40px 0; min-height: 80vh; background: var(--light); }
 .checkout-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
@@ -243,9 +241,9 @@ a { text-decoration: none; color: inherit; }
 .checkout-summary-box {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 16px;  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);  margin-bottom: 20px;
 }
 
 .checkout-form-box h3, 
@@ -263,7 +261,6 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.9rem; color: var(--text);
 }
 
-/* Checkout-specific input overrides */
 .checkout-form-box input, 
 .checkout-form-box textarea {
   width: 100%;
@@ -292,10 +289,10 @@ a { text-decoration: none; color: inherit; }
 
 .summary-row {
   display: flex; justify-content: space-between;
-  margin-bottom: 8px; font-size: 0.95rem;}
+  margin-bottom: 8px; font-size: 0.95rem;
+}
 
-.summary-row.total {
-  font-size: 1.2rem; font-weight: 800;
+.summary-row.total {  font-size: 1.2rem; font-weight: 800;
   color: var(--primary); margin-top: 12px;
 }
 
@@ -324,24 +321,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================================
-   14. RESPONSIVE DESKTOP
-   ========================================= */
-@media (min-width: 768px) {
-  .hero { min-height: 500px; }
-  .hero h1 { font-size: 58px; }
-  
-  .product-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; }
-  .product-image-wrap { height: 230px; }
-  
-  .why-grid { grid-template-columns: repeat(3, 1fr); }
-  .section, .shop-section { padding: 28px 40px; }
-  
-  /* Desktop Checkout: Side by side */
-  .checkout-grid { grid-template-columns: 1.5fr 1fr; }
-  .checkout-section { padding: 60px 0; }
-  }
-/* =========================================
-   15. ABOUT PAGE STYLES
+   14. ABOUT PAGE STYLES
    ========================================= */
 .about-page-section { 
   padding: 40px 0; min-height: 80vh; background: var(--light); 
@@ -361,8 +341,7 @@ a { text-decoration: none; color: inherit; }
 
 .about-card p { margin-bottom: 16px; color: var(--muted); line-height: 1.8; }
 .about-card ul { list-style: none; margin-top: 10px; }
-.about-card li { 
-  padding: 8px 0; border-bottom: 1px solid #f0f0f0; 
+.about-card li {   padding: 8px 0; border-bottom: 1px solid #f0f0f0; 
   color: var(--text); font-size: 0.95rem;
 }
 .about-card li:last-child { border-bottom: none; }
@@ -376,7 +355,7 @@ a { text-decoration: none; color: inherit; }
 .value-item strong { color: var(--dark); font-size: 0.95rem; }
 
 /* =========================================
-   16. CONTACT PAGE STYLES
+   15. CONTACT PAGE STYLES
    ========================================= */
 .contact-page-section { 
   padding: 40px 0; min-height: 80vh; background: var(--light); 
@@ -410,10 +389,8 @@ a { text-decoration: none; color: inherit; }
 }
 .btn-whatsapp-contact:hover { opacity: 0.9; }
 
-/* Reuse checkout form styles for contact form inputs */
 .contact-form-box input, .contact-form-box textarea {
-  width: 100%; padding: 14px; border: 1px solid var(--border);
-  border-radius: 8px; outline: none; background: #fafafa;
+  width: 100%; padding: 14px; border: 1px solid var(--border);  border-radius: 8px; outline: none; background: #fafafa;
   font-size: 1rem; font-family: Arial, sans-serif; transition: all 0.3s;
 }
 .contact-form-box input:focus, .contact-form-box textarea:focus {
@@ -422,15 +399,50 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================================
-   17. RESPONSIVE DESKTOP UPDATES
+   16. CART PAGE STYLES (ADDED!)
+   ========================================= */
+.cart-page-section { 
+  padding: 40px 0; min-height: 80vh; background: var(--light); 
+}
+
+.cart-layout { display: grid; grid-template-columns: 1fr; gap: 24px; }
+
+.cart-items-box, .cart-summary-box {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.empty-cart-msg { text-align: center; color: var(--muted); padding: 40px 0; }
+
+.cart-summary-box h3 { font-size: 1.2rem; margin-bottom: 16px; color: var(--dark); }
+.summary-divider { height: 1px; background: var(--border); margin: 16px 0; }
+
+.back-to-shop-link {
+  display: block; text-align: center; color: var(--muted);
+  text-decoration: none; margin-top: 12px; font-size: 0.9rem;
+}
+.back-to-shop-link:hover { color: var(--primary); }
+
+/* =========================================
+   17. RESPONSIVE DESKTOP (MERGED)
    ========================================= */
 @media (min-width: 768px) {
-  /* About: Side by side on desktop */
-  .about-grid { grid-template-columns: 1fr 1fr; }
+  /* Global Layout Updates */
+  .hero { min-height: 500px; }
+  .hero h1 { font-size: 58px; }
+  .product-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .product-image-wrap { height: 230px; }
+  .why-grid { grid-template-columns: repeat(3, 1fr); }
+  .section, .shop-section { padding: 28px 40px; }
   
-  /* Contact: Info left, form right */
+  /* Page Specific Grids */
+  .checkout-grid { grid-template-columns: 1.5fr 1fr; }
+  .checkout-section { padding: 60px 0; }
+  
+  .about-grid { grid-template-columns: 1fr 1fr; }  .values-list { grid-template-columns: 1fr 1fr; }
+  
   .contact-grid { grid-template-columns: 1fr 1.2fr; }
   
-  /* Values list becomes 2 columns on desktop */
-  .values-list { grid-template-columns: 1fr 1fr; }
-}
+  .cart-layout { grid-template-columns: 1.5fr 1fr; }
+  .cart-summary-box { position: sticky; top: 80px; }
+     }

@@ -3,132 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Checkout | ArthurmallGh</title>
+  <title>Secure Checkout | ArthurmallGh</title>
   <link rel="stylesheet" href="style.css"/>
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '884108644688658');
-fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=884108644688658&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+  
+  <!-- Meta Pixel Code (ONLY ONCE) -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '884108644688658');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=884108644688658&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
-<header class="topbar">
-  <button class="menu-icon" id="menuBtn">&#9776;</button>
+  <header class="topbar">
+    <button class="menu-icon" id="menuBtn">&#9776;</button>
+    <a href="index.html" class="logo">
+      <img src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo" />
+      <span>ArthurmallGh</span>
+    </a>
+    <div class="secure-badge">🔒 Secure</div>
+  </header>
 
-  <a href="index.html" class="logo">
-    <img src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo" />
-    <span>ArthurmallGh</span>
-  </a>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html">Cart</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  
-</header>
+  <section class="section checkout-section">
+    <div class="container">
+      <div class="section-title"><span></span><h2>CHECKOUT</h2><span></span></div>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="shop.html">Shop</a>
-  <a href="cart.html">Cart</a>
-  <a href="checkout.html">Checkout</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
+      <form id="checkoutForm" class="checkout-grid">
+        
+        <!-- LEFT: Customer Info -->
+        <div class="checkout-form-box">          <h3>Delivery Information</h3>
+          <p class="subtitle">We deliver to your doorstep. Payment on delivery.</p>
+          
+          <div class="form-group">
+            <label for="customerName">Full Name</label>
+            <input type="text" id="customerName" placeholder="e.g. Kwame Mensah" required />
+          </div>
 
-<section class="section">
-  <div class="section-title">
-    <span></span>
-    <h2>CHECKOUT</h2>
-    <span></span>
-  </div>
+          <div class="form-group">
+            <label for="customerPhone">Phone Number</label>
+            <input type="tel" id="customerPhone" placeholder="e.g. 055 123 4567" required />
+          </div>
 
-  <div class="checkout-grid">
-    <div class="checkout-form-box">
-      <h3>Customer Information</h3>
+          <div class="form-group">
+            <label for="customerAddress">Delivery Address / Location</label>
+            <textarea id="customerAddress" rows="3" placeholder="House number, Street name, Landmark..." required></textarea>
+          </div>
 
-      <form id="checkoutForm" class="checkout-form">
-        <div class="form-group">
-          <label for="customerName">Full Name</label>
-          <input type="text" id="customerName" required />
+          <div class="form-group">
+            <label for="customerNote">Extra Note (Optional)</label>
+            <textarea id="customerNote" rows="2" placeholder="Any special instructions?"></textarea>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="customerPhone">Phone Number</label>
-          <input type="tel" id="customerPhone" required />
+        <!-- RIGHT: Order Summary -->
+        <div class="checkout-summary-box">
+          <h3>Order Summary</h3>
+          <div id="checkoutItems" class="checkout-items">
+            <div class="loading-msg">Loading cart...</div>
+          </div>
+          
+          <div class="summary-divider"></div>
+          
+          <div class="summary-row">
+            <span>Total Items:</span>
+            <strong id="checkoutTotalItems">0</strong>
+          </div>
+          <div class="summary-row total">
+            <span>Total Price:</span>
+            <strong id="checkoutTotalPrice">₵0</strong>
+          </div>
+
+          <div class="payment-method">
+            <span>💰</span>
+            <div>
+              <strong>Pay on Delivery</strong>
+              <small>Cash or Mobile Money upon receipt</small>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary checkout-submit-btn">
+            Complete Order via WhatsApp 
+          </button>
+          
+          <p class="security-note"> Your details are sent securely via encrypted WhatsApp message.</p>
         </div>
 
-        <div class="form-group">
-          <label for="customerLocation">Location</label>
-          <textarea id="customerAddress" rows="4" required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="customerNote">Extra Note</label>
-          <textarea id="customerNote" rows="3"></textarea>
-        </div>
-
-        <button type="submit" class="btn checkout-submit-btn">Place Order on WhatsApp</button>
       </form>
     </div>
+  </section>
 
-    <div class="checkout-summary-box">
-      <h3>Order Summary</h3>
-      <div id="checkoutItems" class="checkout-items"></div>
-      <div class="summary-row">
-        <span>Total Items:</span>
-        <strong id="checkoutTotalItems">0</strong>
-      </div>
-      <div class="summary-row">
-        <span>Total Price:</span>
-        <strong id="checkoutTotalPrice">₵0</strong>
-      </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <img class="footer-logo" src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo">
+      <h3>ArthurmallGh</h3>
+      <p>Quality bags, smart watches, electronic devices and more.</p>
+      <p>Phone: +233 57 084 8484</p>
+      <p>Email: ericarthur2020@yahoo.com</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<footer class="footer">
-  <div class="footer-content">
-    <img class="footer-logo" src="https://i.imgur.com/YEgotE7.png" alt="ArthurmallGh logo" />
-    <h3>ArthurmallGh</h3>
-
-    <p>Quality bags, smart watches, electronic devices and more.</p>
-    <p>Phone: +233 57 084 8484</p>
-    <p>Email: ericarthur2020@yahoo.com</p>
-  </div>
-</footer>
-
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '884108644688658');
-fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=884108644688658&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

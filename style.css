@@ -340,3 +340,97 @@ a { text-decoration: none; color: inherit; }
   .checkout-grid { grid-template-columns: 1.5fr 1fr; }
   .checkout-section { padding: 60px 0; }
   }
+/* =========================================
+   15. ABOUT PAGE STYLES
+   ========================================= */
+.about-page-section { 
+  padding: 40px 0; min-height: 80vh; background: var(--light); 
+}
+
+.about-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+
+.about-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.about-card h3 {
+  font-size: 1.3rem; margin-bottom: 16px; color: var(--dark);
+  display: flex; align-items: center; gap: 10px;
+}
+
+.about-card p { margin-bottom: 16px; color: var(--muted); line-height: 1.8; }
+.about-card ul { list-style: none; margin-top: 10px; }
+.about-card li { 
+  padding: 8px 0; border-bottom: 1px solid #f0f0f0; 
+  color: var(--text); font-size: 0.95rem;
+}
+.about-card li:last-child { border-bottom: none; }
+
+.values-list { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 16px; }
+.value-item { 
+  display: flex; align-items: center; gap: 12px; 
+  padding: 12px; background: #fafafa; border-radius: 8px;
+}
+.value-icon { font-size: 1.5rem; }
+.value-item strong { color: var(--dark); font-size: 0.95rem; }
+
+/* =========================================
+   16. CONTACT PAGE STYLES
+   ========================================= */
+.contact-page-section { 
+  padding: 40px 0; min-height: 80vh; background: var(--light); 
+}
+
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+
+.contact-info-box, .contact-form-box {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-info-box h3, .contact-form-box h3 {
+  font-size: 1.2rem; margin-bottom: 8px; color: var(--dark);
+}
+
+.info-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 16px 0; border-bottom: 1px solid var(--border);
+}
+.info-item:last-of-type { border-bottom: none; }
+.info-item span { font-size: 1.5rem; }
+.info-item strong { display: block; color: var(--dark); margin-bottom: 4px; }
+.info-item p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+.btn-whatsapp-contact {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 16px; background: #25D366; color: white;
+  border: none; border-radius: 8px; font-weight: 700; font-size: 1rem;
+  text-decoration: none; margin-top: 20px; transition: opacity 0.3s;
+}
+.btn-whatsapp-contact:hover { opacity: 0.9; }
+
+/* Reuse checkout form styles for contact form inputs */
+.contact-form-box input, .contact-form-box textarea {
+  width: 100%; padding: 14px; border: 1px solid var(--border);
+  border-radius: 8px; outline: none; background: #fafafa;
+  font-size: 1rem; font-family: Arial, sans-serif; transition: all 0.3s;
+}
+.contact-form-box input:focus, .contact-form-box textarea:focus {
+  border-color: var(--primary); background: var(--white);
+  box-shadow: 0 0 0 3px rgba(227, 19, 27, 0.1);
+}
+
+/* =========================================
+   17. RESPONSIVE DESKTOP UPDATES
+   ========================================= */
+@media (min-width: 768px) {
+  /* About: Side by side on desktop */
+  .about-grid { grid-template-columns: 1fr 1fr; }
+  
+  /* Contact: Info left, form right */
+  .contact-grid { grid-template-columns: 1fr 1.2fr; }
+  
+  /* Values list becomes 2 columns on desktop */
+  .values-list { grid-template-columns: 1fr 1fr; }
+}

@@ -133,19 +133,31 @@ if (searchInput) {
   });
 }
 
-/* ================= MODAL LOGIC ================= */
+/* ================= MODAL LOGIC (FIXED) ================= */
 document.querySelectorAll(".view-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     const card = btn.closest(".product-card");
     if (!card) return;
 
+    // ROBUST PRICE EXTRACTION
+    // 1. Try data-price first
+    let rawPrice = card.dataset.price;
+    
+    // 2. Fallback: Parse the visible .price text if data-price is missing/wrong
+    if (!rawPrice || isNaN(parseFloat(rawPrice))) {
+      const priceText = card.querySelector(".price")?.textContent || "0";
+      // Remove '₵', commas, and spaces to get just the number
+      rawPrice = priceText.replace(/[^0-9.]/g, '');
+    }
+
     currentProduct = {
-      name: card.dataset.name,
-      price: Number(card.dataset.price),
-      image: card.dataset.image,
+      name: card.dataset.name || card.querySelector("h3")?.textContent || "Unknown Product",
+      price: Number(rawPrice),
+      image: card.dataset.image || card.querySelector("img")?.src || "",
       details: card.dataset.details || "",
-      stock: card.dataset.stock || "in"    };
+      stock: card.dataset.stock || "in"
+    };
 
     if (modalImage) modalImage.src = currentProduct.image;
     if (modalName) modalName.textContent = currentProduct.name;
@@ -159,7 +171,7 @@ document.querySelectorAll(".view-btn").forEach((btn) => {
       fbq("track", "ViewContent", {
         content_name: currentProduct.name,
         content_type: "product",
-        value: Number(currentProduct.price),
+        value: currentProduct.price,
         currency: "GHS"
       });
     }

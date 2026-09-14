@@ -47,10 +47,12 @@ function saveSelectedProduct(product) {
   localStorage.setItem("arthurmallghCheckoutProduct", JSON.stringify(product));
   updateCartCount();
 }
+
 function goToCheckout(product) {
   saveSelectedProduct(product);
-  
-  // META PIXEL: Initiate Checkout
+
+  // META PIXEL: Initiate Checkout — fine to keep here, this is a genuine intent signal,
+  // not a duplicate of the final conversion event.
   if (typeof fbq !== "undefined") {
     fbq("track", "InitiateCheckout", {
       content_name: product.name,
@@ -59,13 +61,13 @@ function goToCheckout(product) {
       currency: "GHS"
     });
   }
-  
+
   window.location.href = "checkout.html";
 }
 
 function setModalOrderButton(stockStatus) {
   if (!modalOrderBtn) return;
-  
+
   if (isOutOfStock(stockStatus)) {
     modalOrderBtn.textContent = "Out of Stock";
     modalOrderBtn.disabled = true;
@@ -82,40 +84,35 @@ function applyFilterAndSearch(selectedFilter = null) {
   const grid = document.querySelector('.product-grid');
   if (!grid || !productCards.length) return;
 
-  // Get active filter safely
-  const activeFilter = selectedFilter || 
-    document.querySelector(".filter-btn.active")?.dataset.filter || 
+  const activeFilter = selectedFilter ||
+    document.querySelector(".filter-btn.active")?.dataset.filter ||
     "all";
-    
+
   const searchValue = searchInput ? searchInput.value.toLowerCase().trim() : "";
 
-  // Trigger smooth reflow for mobile grid stability
   grid.classList.add('reflowing');
 
   productCards.forEach((card) => {
     const category = card.dataset.category?.toLowerCase().trim() || "";
-    const name = card.dataset.name?.toLowerCase() || 
+    const name = card.dataset.name?.toLowerCase() ||
                  card.querySelector("h3")?.textContent.toLowerCase() || "";
-    // Normalize strings: handle singular/plural mismatches (e.g., "watch" vs "watches")
     const normFilter = activeFilter.replace(/s$/, '').toLowerCase();
     const normCategory = category.replace(/s$/, '').toLowerCase();
 
-    const matchesFilter = activeFilter === "all" || 
-                          normCategory.includes(normFilter) || 
+    const matchesFilter = activeFilter === "all" ||
+                          normCategory.includes(normFilter) ||
                           normFilter.includes(normCategory);
-                          
+
     const matchesSearch = name.includes(searchValue);
 
     card.style.display = (matchesFilter && matchesSearch) ? "block" : "none";
   });
 
-  // Force browser to recalculate layout after filtering without visible flicker
   setTimeout(() => {
     grid.classList.remove('reflowing');
   }, 50);
 }
 
-// Filter Button Clicks
 if (filterButtons.length) {
   filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -126,28 +123,23 @@ if (filterButtons.length) {
   });
 }
 
-// Search Input
 if (searchInput) {
   searchInput.addEventListener("keyup", () => {
     applyFilterAndSearch();
   });
 }
 
-/* ================= MODAL LOGIC (FIXED) ================= */
+/* ================= MODAL LOGIC ================= */
 document.querySelectorAll(".view-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     const card = btn.closest(".product-card");
     if (!card) return;
 
-    // ROBUST PRICE EXTRACTION
-    // 1. Try data-price first
     let rawPrice = card.dataset.price;
-    
-    // 2. Fallback: Parse the visible .price text if data-price is missing/wrong
+
     if (!rawPrice || isNaN(parseFloat(rawPrice))) {
       const priceText = card.querySelector(".price")?.textContent || "0";
-      // Remove '₵', commas, and spaces to get just the number
       rawPrice = priceText.replace(/[^0-9.]/g, '');
     }
 
@@ -163,10 +155,10 @@ document.querySelectorAll(".view-btn").forEach((btn) => {
     if (modalName) modalName.textContent = currentProduct.name;
     if (modalPrice) modalPrice.textContent = formatMoney(currentProduct.price);
     if (modalDetails) modalDetails.textContent = currentProduct.details;
-    
+
     setModalOrderButton(currentProduct.stock);
 
-    // META PIXEL: View Content
+    // META PIXEL: View Content — a genuine distinct signal, not a duplicate of the conversion event.
     if (typeof fbq !== "undefined") {
       fbq("track", "ViewContent", {
         content_name: currentProduct.name,
@@ -188,10 +180,9 @@ if (closeModal && modal) {
 }
 
 /* ================= ORDER BUTTONS ================= */
-// Card Order Buttons
 document.querySelectorAll(".order-btn").forEach((btn) => {
   if (btn.id === "modalOrderBtn") return;
-  
+
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
     const card = btn.closest(".product-card");
@@ -206,15 +197,15 @@ document.querySelectorAll(".order-btn").forEach((btn) => {
       name: card.dataset.name,
       price: Number(card.dataset.price),
       image: card.dataset.image,
-      quantity: 1    });
+      quantity: 1
+    });
   });
 });
 
-// Modal Order Button
 if (modalOrderBtn) {
   modalOrderBtn.addEventListener("click", () => {
     if (!currentProduct) return;
-    
+
     if (isOutOfStock(currentProduct.stock)) {
       alert("Sorry, this product is currently out of stock.");
       return;
@@ -255,6 +246,7 @@ function renderSingleCheckoutProduct() {
   if (checkoutTotalItems) checkoutTotalItems.textContent = "1";
   if (checkoutTotalPrice) checkoutTotalPrice.textContent = formatMoney(singleProduct.price);
 }
+
 if (checkoutForm) {
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -266,9 +258,15 @@ if (checkoutForm) {
     const customerAddress = document.getElementById("customerAddress").value.trim();
     const customerNote = document.getElementById("customerNote").value.trim();
 
-    // META PIXEL: Lead & WhatsApp Order
+    const message = `Hello, I want to place an order.\n\nProduct: ${singleProduct.name}\nPrice: ${formatMoney(singleProduct.price)}\n\nName: ${customerName}\nPhone: ${customerPhone}\nAddress: ${customerAddress}\nNote: ${customerNote || "None"}`;
+
+    // Redirect to WhatsApp first — the pixel event fires immediately after,
+    // tied to the actual handoff to WhatsApp rather than to form submission.
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+
+    // META PIXEL: single consolidated conversion event.
+    // Previously this fired BOTH "Lead" and "WhatsAppOrder" on submit — now it's one event only.
     if (typeof fbq !== "undefined") {
-      fbq("track", "Lead");
       fbq("trackCustom", "WhatsAppOrder", {
         content_name: singleProduct.name,
         content_type: "product",
@@ -276,10 +274,6 @@ if (checkoutForm) {
         currency: "GHS"
       });
     }
-
-    const message = `Hello, I want to place an order.\n\nProduct: ${singleProduct.name}\nPrice: ${formatMoney(singleProduct.price)}\n\nName: ${customerName}\nPhone: ${customerPhone}\nAddress: ${customerAddress}\nNote: ${customerNote || "None"}`;
-    
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
   });
 }
 
@@ -287,44 +281,40 @@ if (checkoutForm) {
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    
+
     const name = document.getElementById("contactName").value.trim();
     const phone = document.getElementById("contactPhone").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
 
-    // META PIXEL: Contact Inquiry
+    const text = `Hello, I want to make an inquiry.\n\nName: ${name}\nPhone: ${phone}\nMessage: ${message}`;
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
+
+    // META PIXEL: single consolidated event for inquiries.
+    // Previously this fired BOTH "Contact" and "WhatsAppInquiry" on submit — now it's one event only.
     if (typeof fbq !== "undefined") {
-      fbq("track", "Contact");
       fbq("trackCustom", "WhatsAppInquiry");
     }
-
-    const text = `Hello, I want to make an inquiry.\n\nName: ${name}\nPhone: ${phone}\nMessage: ${message}`;
-    
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
   });
 }
 
-/* ================= INITIALIZATION ================= */document.addEventListener('DOMContentLoaded', () => {
-  // Always update cart count and checkout summary on load
+/* ================= INITIALIZATION ================= */
+document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
   renderSingleCheckoutProduct();
-  
-  // Handle URL parameters from home page category links
+
   const params = new URLSearchParams(window.location.search);
   const urlCategory = params.get('category');
-  
+
   if (urlCategory) {
-    // Try to find matching filter button first
     const matchingBtn = document.querySelector(`.filter-btn[data-filter="${urlCategory}"]`);
-    
+
     if (matchingBtn) {
-      matchingBtn.click(); // Activates button style AND triggers filter
+      matchingBtn.click();
     } else {
-      // Fallback: manually apply filter if no exact button match
       applyFilterAndSearch(urlCategory);
     }
   } else {
-    // Default: show all products
     applyFilterAndSearch('all');
   }
 });

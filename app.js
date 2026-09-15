@@ -265,9 +265,10 @@ if (checkoutForm) {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
 
     // META PIXEL: single consolidated conversion event.
-    // Previously this fired BOTH "Lead" and "WhatsAppOrder" on submit — now it's one event only.
+    // Previously this fired BOTH "Lead" and "WhatsAppOrder" on submit — now it's one event only,
+    // and it fires after the redirect is triggered rather than before.
     if (typeof fbq !== "undefined") {
-      fbq("trackCustom", "WhatsAppOrder", {
+      fbq("track", "Purchase", {
         content_name: singleProduct.name,
         content_type: "product",
         value: Number(singleProduct.price),

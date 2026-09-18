@@ -51,8 +51,7 @@ function saveSelectedProduct(product) {
 function goToCheckout(product) {
   saveSelectedProduct(product);
 
-  // META PIXEL: Initiate Checkout — fine to keep here, this is a genuine intent signal,
-  // not a duplicate of the final conversion event.
+  // META PIXEL: Initiate Checkout — genuine intent signal (not a duplicate)
   if (typeof fbq !== "undefined") {
     fbq("track", "InitiateCheckout", {
       content_name: product.name,
@@ -158,7 +157,7 @@ document.querySelectorAll(".view-btn").forEach((btn) => {
 
     setModalOrderButton(currentProduct.stock);
 
-    // META PIXEL: View Content — a genuine distinct signal, not a duplicate of the conversion event.
+    // META PIXEL: View Content — genuine distinct signal (not a duplicate)
     if (typeof fbq !== "undefined") {
       fbq("track", "ViewContent", {
         content_name: currentProduct.name,
@@ -260,21 +259,12 @@ if (checkoutForm) {
 
     const message = `Hello, I want to place an order.\n\nProduct: ${singleProduct.name}\nPrice: ${formatMoney(singleProduct.price)}\n\nName: ${customerName}\nPhone: ${customerPhone}\nAddress: ${customerAddress}\nNote: ${customerNote || "None"}`;
 
-    // Redirect to WhatsApp first — the pixel event fires immediately after,
-    // tied to the actual handoff to WhatsApp rather than to form submission.
+    // 1. Open WhatsApp in a new tab
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
 
-    // META PIXEL: single consolidated conversion event.
-    // Previously this fired BOTH "Lead" and "WhatsAppOrder" on submit — now it's one event only,
-    // and it fires after the redirect is triggered rather than before.
-    if (typeof fbq !== "undefined") {
-      fbq("track", "Purchase", {
-        content_name: singleProduct.name,
-        content_type: "product",
-        value: Number(singleProduct.price),
-        currency: "GHS"
-      });
-    }
+    // 2. Redirect to Thank You page where Purchase event will fire
+    // This ensures the event fires AFTER the customer completes the checkout flow
+    window.location.href = "thank-you.html";
   });
 }
 
@@ -291,11 +281,13 @@ if (contactForm) {
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
 
-    // META PIXEL: single consolidated event for inquiries.
-    // Previously this fired BOTH "Contact" and "WhatsAppInquiry" on submit — now it's one event only.
+    // META PIXEL: Single consolidated event for inquiries (no duplicates)
     if (typeof fbq !== "undefined") {
       fbq("trackCustom", "WhatsAppInquiry");
     }
+    
+    // Optional: Reset form
+    contactForm.reset();
   });
 }
 

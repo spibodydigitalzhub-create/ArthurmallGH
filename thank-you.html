@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - Arthur Mall GH</title>
+    
+    <!-- ⚠️ IMPORTANT: Paste your Meta Pixel Base Code here! ⚠️ -->
+    <!-- If you don't paste the base code here, the Purchase event will not fire. -->
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            color: #1f2937;
+        }
+        .success-container {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        .success-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #dcfce7;
+            color: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 20px;
+            font-weight: bold;
+        }
+        h1 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #111827;
+        }
+        p {
+            margin: 0 0 30px;
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .btn-home {
+            display: inline-block;
+            background-color: #25D366; /* WhatsApp Green */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background-color 0.2s ease;
+        }
+        .btn-home:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+        <h1>Order Confirmed!</h1>
+        <p>Thank you for your order. Please check your WhatsApp to complete the chat with our team.</p>
+        <a href="index.html" class="btn-home">Continue Shopping</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Get the product data from localStorage
+            const singleProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
+
+            // 2. Fire the Purchase event ONLY if we have product data and the Pixel is loaded
+            if (singleProduct && typeof fbq !== "undefined") {
+                
+                fbq("track", "Purchase", {
+                    content_name: singleProduct.name,
+                    content_type: "product",
+                    value: Number(singleProduct.price),
+                    currency: "GHS"
+                });
+
+                // 3. Clear the cart so the event doesn't fire again if they refresh the page
+                localStorage.removeItem("arthurmallghCheckoutProduct");
+                
+                console.log("✅ Purchase event fired successfully for:", singleProduct.name);
+            }
+        });
+    </script>
+
+</body>
+</html>

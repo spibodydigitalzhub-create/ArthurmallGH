@@ -262,8 +262,8 @@ if (checkoutForm) {
     // 1. Open WhatsApp in a new tab
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
 
-    // 2. Redirect to Thank You page where Purchase event will fire
-    // This ensures the event fires AFTER the customer completes the checkout flow
+    // 2. Redirect the current tab to the new Thank You page
+    // The Purchase event will fire on that page, NOT here.
     window.location.href = "thank-you.html";
   });
 }

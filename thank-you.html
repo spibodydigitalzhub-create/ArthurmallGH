@@ -5,13 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmed - Arthur Mall GH</title>
     
-    <!-- ⚠️ IMPORTANT: Paste your Meta Pixel Base Code here! ⚠️ -->
-    <!-- If you don't paste the base code here, the Purchase event will not fire. -->
+    <!-- ========================================== -->
+    <!-- ⚠️ REPLACE 'YOUR_PIXEL_ID_HERE' WITH YOUR ACTUAL META PIXEL ID ⚠️ -->
+    <!-- ========================================== -->
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f4f5;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -19,21 +38,21 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            color: #1f2937;
+            color: #333;
         }
         .success-container {
             background: #ffffff;
             padding: 40px 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             max-width: 400px;
             width: 100%;
         }
         .success-icon {
             width: 70px;
             height: 70px;
-            background-color: #dcfce7;
-            color: #16a34a;
+            background-color: #e6f4ea;
+            color: #1e7e34;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -45,17 +64,17 @@
         h1 {
             margin: 0 0 10px;
             font-size: 24px;
-            color: #111827;
+            color: #202124;
         }
         p {
             margin: 0 0 30px;
-            color: #6b7280;
+            color: #5f6368;
             line-height: 1.6;
             font-size: 16px;
         }
         .btn-home {
             display: inline-block;
-            background-color: #25D366; /* WhatsApp Green */
+            background-color: #25D366;
             color: #ffffff;
             text-decoration: none;
             padding: 12px 24px;
@@ -78,6 +97,9 @@
         <a href="index.html" class="btn-home">Continue Shopping</a>
     </div>
 
+    <!-- ========================================== -->
+    <!-- THIS IS THE CODE THAT FIRES THE PURCHASE EVENT -->
+    <!-- ========================================== -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             // 1. Get the product data from localStorage

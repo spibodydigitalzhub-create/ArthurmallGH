@@ -51,7 +51,7 @@ function saveSelectedProduct(product) {
 function goToCheckout(product) {
   saveSelectedProduct(product);
 
-  // META PIXEL: Initiate Checkout — genuine intent signal (not a duplicate)
+  // META PIXEL: Initiate Checkout — genuine intent signal
   if (typeof fbq !== "undefined") {
     fbq("track", "InitiateCheckout", {
       content_name: product.name,
@@ -157,7 +157,7 @@ document.querySelectorAll(".view-btn").forEach((btn) => {
 
     setModalOrderButton(currentProduct.stock);
 
-    // META PIXEL: View Content — genuine distinct signal (not a duplicate)
+    // META PIXEL: View Content — genuine distinct signal
     if (typeof fbq !== "undefined") {
       fbq("track", "ViewContent", {
         content_name: currentProduct.name,
@@ -246,6 +246,7 @@ function renderSingleCheckoutProduct() {
   if (checkoutTotalPrice) checkoutTotalPrice.textContent = formatMoney(singleProduct.price);
 }
 
+// 🎯 UPDATED CHECKOUT FORM SUBMISSION (Single Purchase Event on Click)
 if (checkoutForm) {
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -259,11 +260,21 @@ if (checkoutForm) {
 
     const message = `Hello, I want to place an order.\n\nProduct: ${singleProduct.name}\nPrice: ${formatMoney(singleProduct.price)}\n\nName: ${customerName}\nPhone: ${customerPhone}\nAddress: ${customerAddress}\nNote: ${customerNote || "None"}`;
 
-    // 1. Open WhatsApp in a new tab
+    // 1. FIRE THE SINGLE PURCHASE EVENT HERE (Exactly on the click to send)
+    if (typeof fbq !== "undefined") {
+      fbq("track", "Purchase", {
+        content_name: singleProduct.name,
+        content_type: "product",
+        value: Number(singleProduct.price),
+        currency: "GHS"
+      });
+    }
+
+    // 2. Open WhatsApp in a new tab
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
 
-    // 2. Redirect the current tab to the new Thank You page
-    // The Purchase event will fire on that page, NOT here.
+    // 3. Redirect to Thank You page 
+    // ⚠️ CRITICAL: Ensure thank-you.html does NOT have another Purchase event, or it will duplicate!
     window.location.href = "thank-you.html";
   });
 }

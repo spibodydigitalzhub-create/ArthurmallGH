@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmed - Arthur Mall GH</title>
     
-    <!-- ========================================== -->
-    <!-- ⚠️ REPLACE 'YOUR_PIXEL_ID_HERE' WITH YOUR ACTUAL META PIXEL ID ⚠️ -->
-    <!-- ========================================== -->
-    
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code (PAGEVIEW ONLY) -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,12 +15,18 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Initialize with your ACTUAL Pixel ID
     fbq('init', '884108644688658'); 
+    
+    // ONLY track PageView on the thank you page. NO Purchase event here!
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
-    /></noscript>
+    
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=884108644688658&ev=PageView&noscript=1"/>
+    </noscript>
     <!-- End Meta Pixel Code -->
 
     <style>
@@ -94,34 +96,10 @@
         <div class="success-icon">✓</div>
         <h1>Order Confirmed!</h1>
         <p>Thank you for your order. Please check your WhatsApp to complete the chat with our team.</p>
-        <a href="index.html" class="btn-home">Continue Shopping</a>
+        <a href="index.html" class="btn-home">Continue Shopping</a is>
     </div>
 
-    <!-- ========================================== -->
-    <!-- THIS IS THE CODE THAT FIRES THE PURCHASE EVENT -->
-    <!-- ========================================== -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // 1. Get the product data from localStorage
-            const singleProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
-
-            // 2. Fire the Purchase event ONLY if we have product data and the Pixel is loaded
-            if (singleProduct && typeof fbq !== "undefined") {
-                
-                fbq("track", "Purchase", {
-                    content_name: singleProduct.name,
-                    content_type: "product",
-                    value: Number(singleProduct.price),
-                    currency: "GHS"
-                });
-
-                // 3. Clear the cart so the event doesn't fire again if they refresh the page
-                localStorage.removeItem("arthurmallghCheckoutProduct");
-                
-                console.log("✅ Purchase event fired successfully for:", singleProduct.name);
-            }
-        });
-    </script>
+    <!-- NO PURCHASE EVENT SCRIPT HERE. IT IS HANDLED IN app.js -->
 
 </body>
 </html>

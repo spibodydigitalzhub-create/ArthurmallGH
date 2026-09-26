@@ -1,3 +1,7 @@
+/* ==========================================
+   ARTHURMALLGH - MAIN APPLICATION SCRIPT
+   ========================================== */
+
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const cartCount = document.getElementById("cartCount");
@@ -219,16 +223,16 @@ if (modalOrderBtn) {
   });
 }
 
-/* ================= CHECKOUT PAGE ================= */
+/* ================= CHECKOUT PAGE (BULLETPROOF) ================= */
 function renderSingleCheckoutProduct() {
   if (!checkoutItems) return;
 
   const singleProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
 
   if (!singleProduct) {
-    checkoutItems.innerHTML = "<p>No product selected.</p>";
+    checkoutItems.innerHTML = "<p>No product selected. Please go back and choose an item.</p>";
     if (checkoutTotalItems) checkoutTotalItems.textContent = "0";
-    if (checkoutTotalPrice) checkoutTotalPrice.textContent = "0";
+    if (checkoutTotalPrice) checkoutTotalPrice.textContent = "₵0";
     return;
   }
 
@@ -246,21 +250,32 @@ function renderSingleCheckoutProduct() {
   if (checkoutTotalPrice) checkoutTotalPrice.textContent = formatMoney(singleProduct.price);
 }
 
-// 🎯 UPDATED CHECKOUT FORM SUBMISSION (Single Purchase Event on Click)
+// 🎯 REBUILT CHECKOUT FORM SUBMISSION (PURCHASE FIRES ONLY HERE)
 if (checkoutForm) {
   checkoutForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Stop default form refresh
+    
     const singleProduct = JSON.parse(localStorage.getItem("arthurmallghCheckoutProduct"));
-    if (!singleProduct) return;
+    if (!singleProduct) {
+      alert("Your cart is empty. Please add a product first.");
+      return;
+    }
 
     const customerName = document.getElementById("customerName").value.trim();
     const customerPhone = document.getElementById("customerPhone").value.trim();
     const customerAddress = document.getElementById("customerAddress").value.trim();
     const customerNote = document.getElementById("customerNote").value.trim();
 
-    const message = `Hello, I want to place an order.\n\nProduct: ${singleProduct.name}\nPrice: ${formatMoney(singleProduct.price)}\n\nName: ${customerName}\nPhone: ${customerPhone}\nAddress: ${customerAddress}\nNote: ${customerNote || "None"}`;
+    const message = `*🛒 NEW ORDER - ARTHURMALLGH*\n\n` +
+                    `*Product:* ${singleProduct.name}\n` +
+                    `*Price:* ${formatMoney(singleProduct.price)}\n\n` +
+                    `*Customer Details:*\n` +
+                    `👤 Name: ${customerName}\n` +
+                    `📞 Phone: ${customerPhone}\n` +
+                    `📍 Address: ${customerAddress}\n` +
+                    `📝 Note: ${customerNote || "None"}`;
 
-    // 1. FIRE THE SINGLE PURCHASE EVENT HERE (Exactly on the click to send)
+    // 1. FIRE THE PURCHASE EVENT EXACTLY HERE (Only once, right before redirect)
     if (typeof fbq !== "undefined") {
       fbq("track", "Purchase", {
         content_name: singleProduct.name,
@@ -268,14 +283,22 @@ if (checkoutForm) {
         value: Number(singleProduct.price),
         currency: "GHS"
       });
+      console.log("✅ Meta Pixel: Purchase Event Fired Successfully");
     }
 
-    // 2. Open WhatsApp in a new tab
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
-
-    // 3. Redirect to Thank You page 
-    // ⚠️ CRITICAL: Ensure thank-you.html does NOT have another Purchase event, or it will duplicate!
-    window.location.href = "thank-you.html";
+    // 2. CRITICAL DELAY: Wait 300ms to ensure Facebook receives the data 
+    // BEFORE the browser redirects away from this page.
+    setTimeout(() => {
+      // Open WhatsApp in a new tab
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+      
+      // Clear the cart from localStorage
+      localStorage.removeItem("arthurmallghCheckoutProduct");
+      updateCartCount();
+      
+      // Redirect to Thank You page
+      window.location.href = "thank-you.html";
+    }, 300); 
   });
 }
 

@@ -3,29 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Shop | ArthurmallGh</title>
-
   <link rel="stylesheet" href="style.css">
 
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2335617683608204');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2335617683608204&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2335617683608204');
+    fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2335617683608204&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -34,18 +31,12 @@ src="https://www.facebook.com/tr?id=2335617683608204&ev=PageView&noscript=1"
      HEADER
 ===================================================== -->
 <header class="topbar">
-  <button class="menu-icon" id="menuBtn">
-    &#9776;
-  </button>
-
+  <button class="menu-icon" id="menuBtn">&#9776;</button>
   <a href="index.html" class="logo">
     <img src="https://i.imgur.com/c3Xsndz.png" alt="ArthurmallGh logo">
     <span>ArthurmallGh</span>
   </a>
-
-  <div class="cart-icon">
-    🛒 <small id="cartCount">0</small>
-  </div>
+  <div class="cart-icon">🛒 <small id="cartCount">0</small></div>
 </header>
 
 <!-- =====================================================
@@ -59,7 +50,7 @@ src="https://www.facebook.com/tr?id=2335617683608204&ev=PageView&noscript=1"
 </nav>
 
 <!-- =====================================================
-     SHOP
+     SHOP SECTION
 ===================================================== -->
 <section class="shop-section">
   <div class="section-title">
@@ -68,10 +59,8 @@ src="https://www.facebook.com/tr?id=2335617683608204&ev=PageView&noscript=1"
     <span></span>
   </div>
 
-  <!-- SEARCH -->
   <input type="text" id="searchInput" class="search-box" placeholder="Search products...">
 
-  <!-- FILTERS -->
   <div class="filter-buttons">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="bag">Bags</button>
@@ -87,688 +76,700 @@ src="https://www.facebook.com/tr?id=2335617683608204&ev=PageView&noscript=1"
   ====================================================== -->
   <div class="product-grid">
 
-    <!-- =================================================
-         BAGS
-    ================================================== -->
-    <div class="product-card" data-category="bag" data-name="Leather Bag" data-price="300" data-image="https://i.imgur.com/dtGfF0U.jpeg" data-details="Free delivery in Accra. Payment on delivery. High quality and durable material.">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/dtGfF0U.jpeg" alt="Leather Bag"></div>
+    <!-- ================= BAGS ================= -->
+    <div class="product-card" data-category="bag" data-name="Leather Bag" data-price="300" data-image="https://i.imgur.com/dtGfF0U.jpeg" data-details="Free delivery in Accra. Payment on delivery. High quality and durable material." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/dtGfF0U.jpeg" alt="Leather Bag" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Leather Bag</h3>
       <p class="price">₵300</p>
       <p class="product-note">Free Wallet</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="bag" data-name="Travel Bag" data-price="300" data-image="https://i.imgur.com/3l9GV07.jpeg" data-details="Free delivery in Accra. Payment on delivery. Premium travel bag for daily use.">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/3l9GV07.jpeg" alt="Travel Bag"></div>
+    <div class="product-card" data-category="bag" data-name="Travel Bag" data-price="300" data-image="https://i.imgur.com/3l9GV07.jpeg" data-details="Free delivery in Accra. Payment on delivery. Premium travel bag for daily use." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/3l9GV07.jpeg" alt="Travel Bag" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Travel Bag</h3>
       <p class="price">₵300</p>
       <p class="product-note">Free Wallet</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="bag" data-name="Office Bag" data-price="300" data-image="https://i.imgur.com/XM1f3gl.jpeg" data-details="Free delivery in Accra. Payment on delivery. Perfect for office and formal use.">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/XM1f3gl.jpeg" alt="Office Bag"></div>
+    <div class="product-card" data-category="bag" data-name="Office Bag" data-price="300" data-image="https://i.imgur.com/XM1f3gl.jpeg" data-details="Free delivery in Accra. Payment on delivery. Perfect for office and formal use." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/XM1f3gl.jpeg" alt="Office Bag" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Office Bag</h3>
       <p class="price">₵300</p>
       <p class="product-note">Free Wallet</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="bag" data-name="Mini Fashion Bag" data-price="300" data-image="https://i.imgur.com/m1iCVCW.jpeg" data-details="Free delivery in Accra. Payment on delivery. Stylish and compact everyday bag.">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/m1iCVCW.jpeg" alt="Mini Fashion Bag"></div>
+    <div class="product-card" data-category="bag" data-name="Mini Fashion Bag" data-price="300" data-image="https://i.imgur.com/m1iCVCW.jpeg" data-details="Free delivery in Accra. Payment on delivery. Stylish and compact everyday bag." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/m1iCVCW.jpeg" alt="Mini Fashion Bag" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Mini Fashion Bag</h3>
       <p class="price">₵300</p>
       <p class="product-note">Free Wallet</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="bag" data-name="Hand Bag" data-price="265" data-image="https://i.imgur.com/VKWouqG.jpeg" data-details="Free delivery in Accra. Payment on delivery. Elegant hand bag with durable finish. No wallet included.">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/VKWouqG.jpeg" alt="Hand Bag"></div>
+    <div class="product-card" data-category="bag" data-name="Hand Bag" data-price="265" data-image="https://i.imgur.com/VKWouqG.jpeg" data-details="Free delivery in Accra. Payment on delivery. Elegant hand bag with durable finish. No wallet included." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/VKWouqG.jpeg" alt="Hand Bag" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Hand Bag</h3>
       <p class="price">₵265</p>
       <p class="product-note">No wallet included</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="bag" data-name="Luxury Bag" data-price="265" data-image="https://i.imgur.com/aoQrsEw.jpeg" data-details="Free delivery in Accra. Payment on delivery. Premium luxury bag with classy look. No wallet included.">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/aoQrsEw.jpeg" alt="Luxury Bag"></div>
+    <div class="product-card" data-category="bag" data-name="Luxury Bag" data-price="265" data-image="https://i.imgur.com/aoQrsEw.jpeg" data-details="Free delivery in Accra. Payment on delivery. Premium luxury bag with classy look. No wallet included." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/aoQrsEw.jpeg" alt="Luxury Bag" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Luxury Bag</h3>
       <p class="price">₵265</p>
       <p class="product-note">No wallet included</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="bag" data-name="Classic Bag" data-price="265" data-image="https://i.imgur.com/QARHYGx.jpeg" data-details="Free delivery in Accra. Payment on delivery. Classic bag suitable for different occasions. No wallet included.">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/QARHYGx.jpeg" alt="Classic Bag"></div>
+    <div class="product-card" data-category="bag" data-name="Classic Bag" data-price="265" data-image="https://i.imgur.com/QARHYGx.jpeg" data-details="Free delivery in Accra. Payment on delivery. Classic bag suitable for different occasions. No wallet included." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/QARHYGx.jpeg" alt="Classic Bag" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Classic Bag</h3>
       <p class="price">₵265</p>
       <p class="product-note">No wallet included</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <!-- =================================================
-         WATCHES (OUT OF STOCK)
-    ================================================== -->
-    <div class="product-card" data-category="watch" data-name="Smart Watch" data-price="300" data-image="https://i.imgur.com/LtDvf8q.jpeg" data-details="FREE DELIVERY NATIONWIDE||STRICTLY PAYMENT ON DELIVERY||2 smart watches, 2 quality airpods, 7 straps, 1 silver chain strap, 2 chargers, 2 watch protectors.">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/LtDvf8q.jpeg" alt="Smart Watch"></div>
+    <!-- ================= WATCHES (OUT OF STOCK) ================= -->
+    <div class="product-card" data-category="watch" data-name="Smart Watch" data-price="300" data-image="https://i.imgur.com/LtDvf8q.jpeg" data-details="FREE DELIVERY NATIONWIDE||STRICTLY PAYMENT ON DELIVERY||2 smart watches, 2 quality airpods, 7 straps, 1 silver chain strap, 2 chargers, 2 watch protectors." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/LtDvf8q.jpeg" alt="Smart Watch" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Smart Watch</h3>
       <p class="price">₵300 <span>₵450</span></p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="watch" data-name="Smart Watch Pro" data-price="300" data-image="https://i.imgur.com/FGE98k0.jpeg" data-details="FREE DELIVERY NATIONWIDE||STRICTLY PAYMENT ON DELIVERY||2 smart watches, 2 quality airpods, 7 straps, 1 silver chain strap, 2 chargers, 2 watch protectors.">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/FGE98k0.jpeg" alt="Smart Watch Pro"></div>
+    <div class="product-card" data-category="watch" data-name="Smart Watch Pro" data-price="300" data-image="https://i.imgur.com/FGE98k0.jpeg" data-details="FREE DELIVERY NATIONWIDE||STRICTLY PAYMENT ON DELIVERY||2 smart watches, 2 quality airpods, 7 straps, 1 silver chain strap, 2 chargers, 2 watch protectors." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/FGE98k0.jpeg" alt="Smart Watch Pro" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Smart Watch Pro</h3>
       <p class="price">₵300 <span>₵450</span></p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="watch" data-name="Premium Watch" data-price="300" data-image="https://i.imgur.com/5xFRy58.jpeg" data-details="FREE DELIVERY NATIONWIDE||STRICTLY PAYMENT ON DELIVERY||2 smart watches, 2 quality airpods, 7 straps, 1 silver chain strap, 2 chargers, 2 watch protectors.">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/5xFRy58.jpeg" alt="Premium Watch"></div>
+    <div class="product-card" data-category="watch" data-name="Premium Watch" data-price="300" data-image="https://i.imgur.com/5xFRy58.jpeg" data-details="FREE DELIVERY NATIONWIDE||STRICTLY PAYMENT ON DELIVERY||2 smart watches, 2 quality airpods, 7 straps, 1 silver chain strap, 2 chargers, 2 watch protectors." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/5xFRy58.jpeg" alt="Premium Watch" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Premium Watch</h3>
       <p class="price">₵300 <span>₵450</span></p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <!-- =================================================
-         ELECTRONICS
-    ================================================== -->
-    <div class="product-card" data-category="electronics" data-name="Quality AirPods" data-price="300" data-image="https://i.imgur.com/LtDvf8q.jpeg" data-details="Electronic device category. Free delivery in Accra. Payment on delivery.">
-      <span class="badge">-10%</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/LtDvf8q.jpeg" alt="Quality AirPods"></div>
+    <!-- ================= ELECTRONICS ================= -->
+    <div class="product-card" data-category="electronics" data-name="Quality AirPods" data-price="300" data-image="https://i.imgur.com/LtDvf8q.jpeg" data-details="Electronic device category. Free delivery in Accra. Payment on delivery." style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #3b82f6; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">-10%</span>
+        <img src="https://i.imgur.com/LtDvf8q.jpeg" alt="Quality AirPods" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Quality AirPods</h3>
       <p class="price">₵300 <span>₵320</span></p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <!-- =================================================
-         REDMI 15C PHONES
-    ================================================== -->
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/dsiNRNj.jpeg" data-stock="5" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge">Available</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/dsiNRNj.jpeg" alt="Redmi 15C"></div>
+    <!-- ================= REDMI 15C PHONES (OUT OF STOCK) ================= -->
+    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/dsiNRNj.jpeg" data-stock="0" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/dsiNRNj.jpeg" alt="Redmi 15C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Redmi 15C</h3>
       <p class="price">₵1,750</p>
       <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/9wtZ95i.jpeg" data-stock="5" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge">Available</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/9wtZ95i.jpeg" alt="Redmi 15C"></div>
-      <h3>Redmi 15C</h3>
-      <p class="price">₵1,750</p>
-      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/Lqf2GuS.jpeg" data-stock="5" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge">Available</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/Lqf2GuS.jpeg" alt="Redmi 15C"></div>
-      <h3>Redmi 15C</h3>
-      <p class="price">₵1,750</p>
-      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/5dLszGs.jpeg" data-stock="5" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge">Available</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/5dLszGs.jpeg" alt="Redmi 15C"></div>
-      <h3>Redmi 15C</h3>
-      <p class="price">₵1,750</p>
-      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-<!-- =================================================
-         REDMI 14C PHONES (OUT OF STOCK)
-    ================================================== -->
-    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/6LZzb0s.jpeg" data-stock="0" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/6LZzb0s.jpeg" alt="Redmi 14C"></div>
-      <h3>Redmi 14C</h3>
-      <p class="price">₵1,550</p>
-      <p class="product-note">FREE DELIVERY IN ACCRA</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/QV494Zq.jpeg" data-stock="0" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/QV494Zq.jpeg" alt="Redmi 14C"></div>
-      <h3>Redmi 14C</h3>
-      <p class="price">₵1,550</p>
-      <p class="product-note">FREE DELIVERY IN ACCRA</p>
-      <div class="product-actions">
+    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/9wtZ95i.jpeg" data-stock="0" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/9wtZ95i.jpeg" alt="Redmi 15C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
+      <h3>Redmi 15C</h3>
+      <p class="price">₵1,750</p>
+      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/5fk3m2I.jpeg" data-stock="0" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/5fk3m2I.jpeg" alt="Redmi 14C"></div>
-      <h3>Redmi 14C</h3>
-      <p class="price">₵1,550</p>
-      <p class="product-note">FREE DELIVERY IN ACCRA</p>
-      <div class="product-actions">
+    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/Lqf2GuS.jpeg" data-stock="0" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/Lqf2GuS.jpeg" alt="Redmi 15C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
+      <h3>Redmi 15C</h3>
+      <p class="price">₵1,750</p>
+      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
-<!-- =================================================
-         REDMI 14C PHONES (IN STOCK)
-    ================================================== -->
-    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/6LZzb0s.jpeg" data-stock="1" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/6LZzb0s.jpeg" alt="Redmi 14C"></div>
+    </div>
+
+    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/5dLszGs.jpeg" data-stock="0" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/5dLszGs.jpeg" alt="Redmi 15C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
+      <h3>Redmi 15C</h3>
+      <p class="price">₵1,750</p>
+      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
+      <div class="product-actions" style="margin-top: auto;">
+        <button class="view-btn">View Details</button>
+        <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
+      </div>
+    </div>
+
+    <!-- ================= REDMI 14C PHONES (IN STOCK) ================= -->
+    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/6LZzb0s.jpeg" data-stock="1" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/6LZzb0s.jpeg" alt="Redmi 14C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Redmi 14C</h3>
       <p class="price">₵1,550</p>
       <p class="product-note">FREE DELIVERY IN ACCRA</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/QV494Zq.jpeg" data-stock="1" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/QV494Zq.jpeg" alt="Redmi 14C"></div>
+    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/QV494Zq.jpeg" data-stock="1" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/QV494Zq.jpeg" alt="Redmi 14C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Redmi 14C</h3>
       <p class="price">₵1,550</p>
       <p class="product-note">FREE DELIVERY IN ACCRA</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/5fk3m2I.jpeg" data-stock="1" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/5fk3m2I.jpeg" alt="Redmi 14C"></div>
+    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/5fk3m2I.jpeg" data-stock="1" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/5fk3m2I.jpeg" alt="Redmi 14C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Redmi 14C</h3>
       <p class="price">₵1,550</p>
       <p class="product-note">FREE DELIVERY IN ACCRA</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/ctFxPUh.jpeg" data-stock="1" data-details="1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER">
-      <div class="product-image-wrap"><img src="https://i.imgur.com/ctFxPUh.jpeg" alt="Redmi 14C"></div>
+    <div class="product-card" data-category="phone" data-name="Redmi 14C" data-price="1550" data-image="https://i.imgur.com/ctFxPUh.jpeg" data-stock="1" data-details="₵1,550 CEDIS || FREE DELIVERY IN ACCRA || PAYMENT ON DELIVERY || 8GB RAM || 256 GB ROM || 5160mAh BATTERY CAPACITY || FAST CHARGER" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <img src="https://i.imgur.com/ctFxPUh.jpeg" alt="Redmi 14C" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Redmi 14C</h3>
       <p class="price">₵1,550</p>
       <p class="product-note">FREE DELIVERY IN ACCRA</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-
-    <!-- =================================================
-         REDMI 15C PHONES (OUT OF STOCK)
-    ================================================== -->
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/dsiNRNj.jpeg" data-stock="0" data-details="1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/dsiNRNj.jpeg" alt="Redmi 15C"></div>
-      <h3>Redmi 15C</h3>
-      <p class="price">₵1,750</p>
-      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/9wtZ95i.jpeg" data-stock="0" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/9wtZ95i.jpeg" alt="Redmi 15C"></div>
-      <h3>Redmi 15C</h3>
-      <p class="price">₵1,750</p>
-      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/Lqf2GuS.jpeg" data-stock="0" data-details="1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/Lqf2GuS.jpeg" alt="Redmi 15C"></div>
-      <h3>Redmi 15C</h3>
-      <p class="price">₵1,750</p>
-      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
-      </div>
-    </div>
-
-    <div class="product-card" data-category="phone" data-name="Redmi 15C" data-price="1750" data-image="https://i.imgur.com/5dLszGs.jpeg" data-stock="0" data-details="₵1,750 CEDIS || FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || CALL/WHATSAPP 0570848484 || Redmi 15C 6.9'' 8GB RAM + 256GB ROM - LTE Dual SIM - 50MP/8MP - 6000mAh - Mint Green">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/5dLszGs.jpeg" alt="Redmi 15C"></div>
-      <h3>Redmi 15C</h3>
-      <p class="price">₵1,750</p>
-      <p class="product-note">FREE DELIVERY NATIONWIDE</p>
-      <div class="product-actions">
-        <button class="view-btn">View Details</button>
-        <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
     <!-- ================= NOKIA 2660 FLIP (OUT OF STOCK) ================= -->
-    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/qJHvPLn.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/qJHvPLn.jpeg" alt="Nokia 2660 Flip"></div>
+    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/qJHvPLn.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/qJHvPLn.jpeg" alt="Nokia 2660 Flip" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Nokia 2660 Flip</h3>
       <p class="price">₵295</p>
       <p class="product-note">2 SIM • Lasting battery</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/PSzmbOy.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/PSzmbOy.jpeg" alt="Nokia 2660 Flip"></div>
+    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/PSzmbOy.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/PSzmbOy.jpeg" alt="Nokia 2660 Flip" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Nokia 2660 Flip</h3>
       <p class="price">₵295</p>
       <p class="product-note">2 SIM • Lasting battery</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/uQuRVaF.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/uQuRVaF.jpeg" alt="Nokia 2660 Flip"></div>
+    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/uQuRVaF.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/uQuRVaF.jpeg" alt="Nokia 2660 Flip" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Nokia 2660 Flip</h3>
       <p class="price">₵295</p>
       <p class="product-note">2 SIM • Lasting battery</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/vsE9pCe.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY">
-      <span class="badge" style="background-color: #ef4444; color: white;">Out of Stock</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/vsE9pCe.jpeg" alt="Nokia 2660 Flip"></div>
+    <div class="product-card" data-category="phone" data-name="Nokia 2660 Flip" data-price="295" data-image="https://i.imgur.com/vsE9pCe.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY || 2 SIM || LASTING BATTERY" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #ef4444; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">Out of Stock</span>
+        <img src="https://i.imgur.com/vsE9pCe.jpeg" alt="Nokia 2660 Flip" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Nokia 2660 Flip</h3>
       <p class="price">₵295</p>
       <p class="product-note">2 SIM • Lasting battery</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn" disabled style="opacity: 0.5; cursor: not-allowed; background-color: #9ca3af;">Out of Stock</button>
       </div>
     </div>
 
     <!-- ================= NEW SHOES ₵280 ================= -->
-    <div class="product-card" data-category="shoe-280" data-name="Urban Classic" data-price="280" data-image="https://i.imgur.com/Uhh4t59.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/Uhh4t59.jpeg" alt="Urban Classic"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Urban Classic" data-price="280" data-image="https://i.imgur.com/Uhh4t59.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/Uhh4t59.jpeg" alt="Urban Classic" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Urban Classic</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Street Runner" data-price="280" data-image="https://i.imgur.com/ch7BwgQ.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/ch7BwgQ.jpeg" alt="Street Runner"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Street Runner" data-price="280" data-image="https://i.imgur.com/ch7BwgQ.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/ch7BwgQ.jpeg" alt="Street Runner" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Street Runner</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Classic Step" data-price="280" data-image="https://i.imgur.com/P5KFFaf.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/P5KFFaf.jpeg" alt="Classic Step"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Classic Step" data-price="280" data-image="https://i.imgur.com/P5KFFaf.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/P5KFFaf.jpeg" alt="Classic Step" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Classic Step</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Executive Walk" data-price="280" data-image="https://i.imgur.com/X1AgRMu.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/X1AgRMu.jpeg" alt="Executive Walk"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Executive Walk" data-price="280" data-image="https://i.imgur.com/X1AgRMu.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/X1AgRMu.jpeg" alt="Executive Walk" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Executive Walk</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Blue Motion" data-price="280" data-image="https://i.imgur.com/TyAJaB3.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/TyAJaB3.jpeg" alt="Blue Motion"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Blue Motion" data-price="280" data-image="https://i.imgur.com/TyAJaB3.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/TyAJaB3.jpeg" alt="Blue Motion" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Blue Motion</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Prime Runner" data-price="280" data-image="https://i.imgur.com/xd4sBdE.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/xd4sBdE.jpeg" alt="Prime Runner"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Prime Runner" data-price="280" data-image="https://i.imgur.com/xd4sBdE.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/xd4sBdE.jpeg" alt="Prime Runner" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Prime Runner</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Royal Step" data-price="280" data-image="https://i.imgur.com/vh3uaOb.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/vh3uaOb.jpeg" alt="Royal Step"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Royal Step" data-price="280" data-image="https://i.imgur.com/vh3uaOb.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/vh3uaOb.jpeg" alt="Royal Step" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Royal Step</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Modern Classic" data-price="280" data-image="https://i.imgur.com/Cj3S1sU.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/Cj3S1sU.jpeg" alt="Modern Classic"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Modern Classic" data-price="280" data-image="https://i.imgur.com/Cj3S1sU.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/Cj3S1sU.jpeg" alt="Modern Classic" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Modern Classic</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="City Walker" data-price="280" data-image="https://i.imgur.com/Wby3ljC.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/Wby3ljC.jpeg" alt="City Walker"></div>
+    <div class="product-card" data-category="shoe-280" data-name="City Walker" data-price="280" data-image="https://i.imgur.com/Wby3ljC.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/Wby3ljC.jpeg" alt="City Walker" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>City Walker</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Elite Comfort" data-price="280" data-image="https://i.imgur.com/r7v7m7H.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/r7v7m7H.jpeg" alt="Elite Comfort"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Elite Comfort" data-price="280" data-image="https://i.imgur.com/r7v7m7H.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/r7v7m7H.jpeg" alt="Elite Comfort" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Elite Comfort</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Premium Walk" data-price="280" data-image="https://i.imgur.com/MtsUVvV.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/MtsUVvV.jpeg" alt="Premium Walk"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Premium Walk" data-price="280" data-image="https://i.imgur.com/MtsUVvV.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/MtsUVvV.jpeg" alt="Premium Walk" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Premium Walk</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Comfort Pro" data-price="280" data-image="https://i.imgur.com/pdtYGnT.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/pdtYGnT.jpeg" alt="Comfort Pro"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Comfort Pro" data-price="280" data-image="https://i.imgur.com/pdtYGnT.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/pdtYGnT.jpeg" alt="Comfort Pro" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Comfort Pro</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
-    <div class="product-card" data-category="shoe-280" data-name="Signature Step" data-price="280" data-image="https://i.imgur.com/5frDLFl.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/5frDLFl.jpeg" alt="Signature Step"></div>
+    <div class="product-card" data-category="shoe-280" data-name="Signature Step" data-price="280" data-image="https://i.imgur.com/5frDLFl.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/5frDLFl.jpeg" alt="Signature Step" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Signature Step</h3>
       <p class="price">₵280</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
     </div>
 
     <!-- ================= NEW SHOES ₵250 ================= -->
-    <div class="product-card" data-category="shoe-250" data-name="Classic Blue" data-price="250" data-image="https://i.imgur.com/hYclycL.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/hYclycL.jpeg" alt="Classic Blue"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Classic Blue" data-price="250" data-image="https://i.imgur.com/hYclycL.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/hYclycL.jpeg" alt="Classic Blue" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Classic Blue</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Urban Style" data-price="250" data-image="https://i.imgur.com/IL4H3zH.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/IL4H3zH.jpeg" alt="Urban Style"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Urban Style" data-price="250" data-image="https://i.imgur.com/IL4H3zH.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/IL4H3zH.jpeg" alt="Urban Style" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Urban Style</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Royal Classic" data-price="250" data-image="https://i.imgur.com/O4OxbuQ.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/O4OxbuQ.jpeg" alt="Royal Classic"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Royal Classic" data-price="250" data-image="https://i.imgur.com/O4OxbuQ.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/O4OxbuQ.jpeg" alt="Royal Classic" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Royal Classic</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Modern Walk" data-price="250" data-image="https://i.imgur.com/hYclycL.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/hYclycL.jpeg" alt="Modern Walk"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Modern Walk" data-price="250" data-image="https://i.imgur.com/hYclycL.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/hYclycL.jpeg" alt="Modern Walk" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Modern Walk</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Premium Step" data-price="250" data-image="https://i.imgur.com/U3O9Ihw.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/U3O9Ihw.jpeg" alt="Premium Step"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Premium Step" data-price="250" data-image="https://i.imgur.com/U3O9Ihw.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/U3O9Ihw.jpeg" alt="Premium Step" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Premium Step</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Street Pro" data-price="250" data-image="https://i.imgur.com/C19OJAv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/C19OJAv.jpeg" alt="Street Pro"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Street Pro" data-price="250" data-image="https://i.imgur.com/C19OJAv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/C19OJAv.jpeg" alt="Street Pro" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Street Pro</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Executive Style" data-price="250" data-image="https://i.imgur.com/z2tlyGS.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/z2tlyGS.jpeg" alt="Executive Style"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Executive Style" data-price="250" data-image="https://i.imgur.com/z2tlyGS.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/z2tlyGS.jpeg" alt="Executive Style" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Executive Style</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="City Classic" data-price="250" data-image="https://i.imgur.com/NJ3Dprv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/NJ3Dprv.jpeg" alt="City Classic"></div>
+    <div class="product-card" data-category="shoe-250" data-name="City Classic" data-price="250" data-image="https://i.imgur.com/NJ3Dprv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/NJ3Dprv.jpeg" alt="City Classic" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>City Classic</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Classic Pro" data-price="250" data-image="https://i.imgur.com/C19OJAv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/C19OJAv.jpeg" alt="Classic Pro"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Classic Pro" data-price="250" data-image="https://i.imgur.com/C19OJAv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/C19OJAv.jpeg" alt="Classic Pro" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Classic Pro</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Smart Runner" data-price="250" data-image="https://i.imgur.com/U5tnyCv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/U5tnyCv.jpeg" alt="Smart Runner"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Smart Runner" data-price="250" data-image="https://i.imgur.com/U5tnyCv.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/U5tnyCv.jpeg" alt="Smart Runner" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Smart Runner</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Elite Walk" data-price="250" data-image="https://i.imgur.com/mOmh9QD.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/mOmh9QD.jpeg" alt="Elite Walk"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Elite Walk" data-price="250" data-image="https://i.imgur.com/mOmh9QD.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/mOmh9QD.jpeg" alt="Elite Walk" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Elite Walk</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Fashion Step" data-price="250" data-image="https://i.imgur.com/WsyN9Se.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/WsyN9Se.jpeg" alt="Fashion Step"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Fashion Step" data-price="250" data-image="https://i.imgur.com/WsyN9Se.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/WsyN9Se.jpeg" alt="Fashion Step" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Fashion Step</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Luxury Walk" data-price="250" data-image="https://i.imgur.com/Std1tqe.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/Std1tqe.jpeg" alt="Luxury Walk"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Luxury Walk" data-price="250" data-image="https://i.imgur.com/Std1tqe.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/Std1tqe.jpeg" alt="Luxury Walk" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Luxury Walk</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Elite Classic" data-price="250" data-image="https://i.imgur.com/mOmh9QD.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/mOmh9QD.jpeg" alt="Elite Classic"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Elite Classic" data-price="250" data-image="https://i.imgur.com/mOmh9QD.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/mOmh9QD.jpeg" alt="Elite Classic" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Elite Classic</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Signature Runner" data-price="250" data-image="https://i.imgur.com/yJ29R7m.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/yJ29R7m.jpeg" alt="Signature Runner"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Signature Runner" data-price="250" data-image="https://i.imgur.com/yJ29R7m.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/yJ29R7m.jpeg" alt="Signature Runner" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Signature Runner</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Prime Classic" data-price="250" data-image="https://i.imgur.com/b4gcev3.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/b4gcev3.jpeg" alt="Prime Classic"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Prime Classic" data-price="250" data-image="https://i.imgur.com/b4gcev3.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/b4gcev3.jpeg" alt="Prime Classic" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Prime Classic</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-250" data-name="Royal Runner" data-price="250" data-image="https://i.imgur.com/RIlhSPZ.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/2itN24F.jpeg" alt="Royal Runner"></div>
+    <div class="product-card" data-category="shoe-250" data-name="Royal Runner" data-price="250" data-image="https://i.imgur.com/RIlhSPZ.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/2itN24F.jpeg" alt="Royal Runner" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Royal Runner</h3>
       <p class="price">₵250</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
+      <div class="product-actions" style="margin-top: auto;"><button class="view-btn">View Details</button><button class="order-btn">Order Now</button></div>
     </div>
 
-    <div class="product-card" data-category="shoe-120" data-name="Shoe" data-price="120" data-image="https://i.imgur.com/2itN24F.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA">
-      <span class="badge">New</span>
-      <div class="product-image-wrap"><img src="https://i.imgur.com/2itN24F.jpeg" alt="New Shoe"></div>
+    <!-- ================= SHOE ₵120 ================= -->
+    <div class="product-card" data-category="shoe-120" data-name="Shoe" data-price="120" data-image="https://i.imgur.com/2itN24F.jpeg" data-details="FREE DELIVERY NATIONWIDE || PAYMENT ON DELIVERY IN ACCRA" style="display: flex; flex-direction: column; height: 100%;">
+      <div class="product-image-wrap" style="position: relative; overflow: hidden; height: 220px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+        <span class="badge" style="position: absolute; top: 10px; left: 10px; background-color: #10b981; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; z-index: 10;">New</span>
+        <img src="https://i.imgur.com/2itN24F.jpeg" alt="New Shoe" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+      </div>
       <h3>Shoe</h3>
       <p class="price">₵120</p>
       <p class="product-note">Free delivery nationwide</p>
-      <div class="product-actions">
+      <div class="product-actions" style="margin-top: auto;">
         <button class="view-btn">View Details</button>
         <button class="order-btn">Order Now</button>
       </div>
@@ -822,4 +823,4 @@ src="https://www.facebook.com/tr?id=2335617683608204&ev=PageView&noscript=1"
 <script src="app.js"></script>
 
 </body>
-      </html>
+  </html>
